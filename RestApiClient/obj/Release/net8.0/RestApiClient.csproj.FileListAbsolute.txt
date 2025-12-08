@@ -1,0 +1,13 @@
+C:\Users\Boztoprak\Desktop\NugetPackages\RestApiClient\bin\Release\net8.0\RestApiClient.deps.json
+C:\Users\Boztoprak\Desktop\NugetPackages\RestApiClient\bin\Release\net8.0\RestApiClient.dll
+C:\Users\Boztoprak\Desktop\NugetPackages\RestApiClient\bin\Release\net8.0\RestApiClient.pdb
+C:\Users\Boztoprak\Desktop\NugetPackages\RestApiClient\obj\Release\net8.0\RestApiClient.csproj.AssemblyReference.cache
+C:\Users\Boztoprak\Desktop\NugetPackages\RestApiClient\obj\Release\net8.0\RestApiClient.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Boztoprak\Desktop\NugetPackages\RestApiClient\obj\Release\net8.0\RestApiClient.AssemblyInfoInputs.cache
+C:\Users\Boztoprak\Desktop\NugetPackages\RestApiClient\obj\Release\net8.0\RestApiClient.AssemblyInfo.cs
+C:\Users\Boztoprak\Desktop\NugetPackages\RestApiClient\obj\Release\net8.0\RestApiClient.csproj.CoreCompileInputs.cache
+C:\Users\Boztoprak\Desktop\NugetPackages\RestApiClient\obj\Release\net8.0\RestApiClient.sourcelink.json
+C:\Users\Boztoprak\Desktop\NugetPackages\RestApiClient\obj\Release\net8.0\RestApiClient.dll
+C:\Users\Boztoprak\Desktop\NugetPackages\RestApiClient\obj\Release\net8.0\refint\RestApiClient.dll
+C:\Users\Boztoprak\Desktop\NugetPackages\RestApiClient\obj\Release\net8.0\RestApiClient.pdb
+C:\Users\Boztoprak\Desktop\NugetPackages\RestApiClient\obj\Release\net8.0\ref\RestApiClient.dll

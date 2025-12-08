@@ -7,6 +7,7 @@
         string GetFileName(string? filePath);
         string GetFileNameWithoutExtension(string? filePath);
         string GetDirectoryName(string? filePath);
-        bool ValidatePath(string filePath);
+        bool ValidateFile(string filePath);
+        bool ValidateDirectory(string directory);
     }
 }

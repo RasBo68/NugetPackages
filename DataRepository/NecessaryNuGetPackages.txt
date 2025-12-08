@@ -1,0 +1,3 @@
+
+- Microsoft.EntityFrameworkCore.SqlServer --> Wenn man SQL Server von microsoft nutzt (Jetzt nicht mehr)
+- Npgsql.EntityFrameworkCore.PostgreSQL --> Wenn man PostgreSQL nutzt

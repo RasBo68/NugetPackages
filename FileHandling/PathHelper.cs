@@ -2,9 +2,13 @@
 {
     public class PathHelper : IPathHelper
     {
-        public bool ValidatePath(string filePath)
+        public bool ValidateFile(string filePath)
         {
             return File.Exists(filePath);
+        }
+        public bool ValidateDirectory(string directory)
+        {
+            return Directory.Exists(directory);
         }
 
         public string CombinePaths(string string1, string string2)

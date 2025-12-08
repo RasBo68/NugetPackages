@@ -1,0 +1,58 @@
+# .NET Core / .NET Framework / Visual Studio Build files
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]ist/
+[Dd]ebug-windows/
+[Dd]ebug-linux/
+[Dd]ebug-macos/
+[Dd]Release/
+[Dd]ReleasePublic/
+[Aa]ssert/
+[Aa]ssertPublic/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# User-specific files (Windows)
+*.suo
+*.user
+
+# User-specific files (macOS)
+.idea/
+
+# User-specific files (Visual Studio for Mac)
+.vscode/
+.vscode-test/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp

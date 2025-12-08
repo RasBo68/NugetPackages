@@ -5,7 +5,8 @@ namespace FileHandling
     {
         Task AppendLinesToFileAsync(string filePath, List<string> contentToWrite);
         Task CreateNewFileAsync(string filePath);
-        Task<string> ReadAllLinesOfFileAsync(string filePath, int lineToRead);
+        Task<string> ReadAllLinesOfFileAsync(string filePath);
         Task<string> ReadLineOfFileAsync(string filePath, int lineToRead);
+        Task DeleteFileAsync(string filePath);
     }
 }

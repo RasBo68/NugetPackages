@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	<PackageId>DataRepository</PackageId> <!-- Der Name des NuGet-Pakets -->
+	<Version>1.0.0</Version> <!-- Die Version des Pakets -->
+	<Authors>Rasit Boztoprak</Authors> <!-- Der Autor des Pakets -->
+	<Description>Abstraktionsschicht für Datenbankzugriffe</Description> <!-- Beschreibung -->
+	<PackageTags>data repository, nuget</PackageTags> <!-- Tags für das Paket -->
+	<RepositoryUrl>https://github.com/RasBo68/NugetPackages.git</RepositoryUrl> <!-- URL zum GitHub Repository -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.22" />
+  </ItemGroup>
+
+</Project>

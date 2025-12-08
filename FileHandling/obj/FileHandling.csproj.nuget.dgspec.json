@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Boztoprak\\source\\repos\\NugetPackages\\FileHandling\\FileHandling.csproj": {}
+    "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\FileHandling\\FileHandling.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Boztoprak\\source\\repos\\NugetPackages\\FileHandling\\FileHandling.csproj": {
+    "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\FileHandling\\FileHandling.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Boztoprak\\source\\repos\\NugetPackages\\FileHandling\\FileHandling.csproj",
+        "projectUniqueName": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\FileHandling\\FileHandling.csproj",
         "projectName": "FileHandling",
-        "projectPath": "C:\\Users\\Boztoprak\\source\\repos\\NugetPackages\\FileHandling\\FileHandling.csproj",
+        "projectPath": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\FileHandling\\FileHandling.csproj",
         "packagesPath": "C:\\Users\\Boztoprak\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Boztoprak\\source\\repos\\NugetPackages\\FileHandling\\obj\\",
+        "outputPath": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\FileHandling\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

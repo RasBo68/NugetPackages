@@ -28,7 +28,7 @@
         {
             await File.AppendAllLinesAsync(filePath, contentToWrite);
         }
-        public async Task<string> ReadAllLinesOfFileAsync(string filePath, int lineToRead)
+        public async Task<string> ReadAllLinesOfFileAsync(string filePath)
         {
             return await File.ReadAllTextAsync(filePath) ?? string.Empty;
         }

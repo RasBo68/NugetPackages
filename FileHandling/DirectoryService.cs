@@ -1,4 +1,6 @@
-﻿namespace FileHandling
+﻿using System.Text.RegularExpressions;
+
+namespace FileHandling
 {
     public class DirectoryService : IDirectoryService
     {
@@ -10,9 +12,19 @@
         }
         public async Task CreateDirectoryAsync(string directory)
         {
+            string dir = directory;
+
+            if (IsPathToFile(directory))
+            {
+                var dirName = _pathHelper.GetDirectoryName(dir);
+                var dirPath = _pathHelper.GetFileNameWithoutExtension(dir);
+                dir = _pathHelper.CombinePaths(dirName, dirPath);
+            }
+
+
             await Task.Run(() =>
             {
-                Directory.CreateDirectory(directory);
+                Directory.CreateDirectory(dir);
             });
         }
         public async Task<List<string>> GetFilenames(string directory)
@@ -33,8 +45,14 @@
             List<string> filenames = await GetFilenames(directory);
 
             return filenames
-                    .Where(fn => _pathHelper.GetFileExtension(fn) == fileExtension)
+                    .Where(fn => _pathHelper.GetFileExtension(fn).ToLower() == fileExtension.ToLower())
                     .ToList();
+        }
+        private bool IsPathToFile(string path)
+        {
+            string pattern = @"^[a-zA-Z]:\\(?:[\w-]+\\)*[\w-]+\.[a-zA-Z0-9]+$";
+            var i = Regex.IsMatch(path, pattern);
+            return Regex.IsMatch(path, pattern);
         }
     }
 }

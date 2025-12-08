@@ -6,12 +6,12 @@
     <authors>Rasit Boztoprak</authors>
     <description>Abstraktionsschicht für Filezugriffe</description>
     <tags>file handling, nuget</tags>
-    <repository type="git" url="https://github.com/RasBo68/NugetPackages.git" />
+    <repository type="git" url="https://github.com/RasBo68/NugetPackages.git" commit="1c978e32f1f63debadd67c418ab2cd97f6a056a2" />
     <dependencies>
       <group targetFramework="net8.0" />
     </dependencies>
   </metadata>
   <files>
-    <file src="C:\Users\Boztoprak\source\repos\NugetPackages\FileHandling\bin\Release\net8.0\FileHandling.dll" target="lib\net8.0\FileHandling.dll" />
+    <file src="C:\Users\Boztoprak\Desktop\NugetPackages\FileHandling\bin\Release\net8.0\FileHandling.dll" target="lib\net8.0\FileHandling.dll" />
   </files>
 </package>

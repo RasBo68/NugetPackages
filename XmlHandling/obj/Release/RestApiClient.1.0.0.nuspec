@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>RestApiClient</id>
+    <version>1.0.0</version>
+    <authors>Rasit Boztoprak</authors>
+    <description>Abstraktionsschicht für Restzugriffe</description>
+    <tags>rest api client, nuget</tags>
+    <repository type="git" url="https://github.com/RasBo68/NugetPackages.git" commit="1c978e32f1f63debadd67c418ab2cd97f6a056a2" />
+    <dependencies>
+      <group targetFramework="net8.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\Boztoprak\Desktop\NugetPackages\XmlHandling\bin\Release\net8.0\XmlHandling.dll" target="lib\net8.0\XmlHandling.dll" />
+  </files>
+</package>

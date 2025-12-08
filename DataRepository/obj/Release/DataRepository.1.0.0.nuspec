@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>DataRepository</id>
+    <version>1.0.0</version>
+    <authors>Rasit Boztoprak</authors>
+    <description>Abstraktionsschicht für Datenbankzugriffe</description>
+    <tags>data repository, nuget</tags>
+    <repository type="git" url="https://github.com/RasBo68/NugetPackages.git" commit="1c978e32f1f63debadd67c418ab2cd97f6a056a2" />
+    <dependencies>
+      <group targetFramework="net8.0">
+        <dependency id="Microsoft.EntityFrameworkCore" version="8.0.22" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\Boztoprak\Desktop\NugetPackages\DataRepository\bin\Release\net8.0\DataRepository.dll" target="lib\net8.0\DataRepository.dll" />
+  </files>
+</package>
