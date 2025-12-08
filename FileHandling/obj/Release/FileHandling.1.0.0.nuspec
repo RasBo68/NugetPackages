@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>FileHandling</id>
+    <version>1.0.0</version>
+    <authors>Rasit Boztoprak</authors>
+    <description>Abstraktionsschicht für Filezugriffe</description>
+    <tags>file handling, nuget</tags>
+    <repository type="git" url="https://github.com/RasBo68/NugetPackages.git" />
+    <dependencies>
+      <group targetFramework="net8.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\Boztoprak\source\repos\NugetPackages\FileHandling\bin\Release\net8.0\FileHandling.dll" target="lib\net8.0\FileHandling.dll" />
+  </files>
+</package>

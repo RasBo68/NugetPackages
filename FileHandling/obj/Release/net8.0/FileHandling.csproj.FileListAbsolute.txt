@@ -1,0 +1,11 @@
+C:\Users\Boztoprak\source\repos\NugetPackages\FileHandling\obj\Release\net8.0\FileHandling.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Boztoprak\source\repos\NugetPackages\FileHandling\obj\Release\net8.0\FileHandling.AssemblyInfoInputs.cache
+C:\Users\Boztoprak\source\repos\NugetPackages\FileHandling\obj\Release\net8.0\FileHandling.AssemblyInfo.cs
+C:\Users\Boztoprak\source\repos\NugetPackages\FileHandling\obj\Release\net8.0\FileHandling.csproj.CoreCompileInputs.cache
+C:\Users\Boztoprak\source\repos\NugetPackages\FileHandling\bin\Release\net8.0\FileHandling.deps.json
+C:\Users\Boztoprak\source\repos\NugetPackages\FileHandling\bin\Release\net8.0\FileHandling.dll
+C:\Users\Boztoprak\source\repos\NugetPackages\FileHandling\bin\Release\net8.0\FileHandling.pdb
+C:\Users\Boztoprak\source\repos\NugetPackages\FileHandling\obj\Release\net8.0\FileHandling.dll
+C:\Users\Boztoprak\source\repos\NugetPackages\FileHandling\obj\Release\net8.0\refint\FileHandling.dll
+C:\Users\Boztoprak\source\repos\NugetPackages\FileHandling\obj\Release\net8.0\FileHandling.pdb
+C:\Users\Boztoprak\source\repos\NugetPackages\FileHandling\obj\Release\net8.0\ref\FileHandling.dll

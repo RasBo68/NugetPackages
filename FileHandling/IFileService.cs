@@ -1,0 +1,11 @@
+﻿
+namespace FileHandling
+{
+    public interface IFileService
+    {
+        Task AppendLinesToFileAsync(string filePath, List<string> contentToWrite);
+        Task CreateNewFileAsync(string filePath);
+        Task<string> ReadAllLinesOfFileAsync(string filePath, int lineToRead);
+        Task<string> ReadLineOfFileAsync(string filePath, int lineToRead);
+    }
+}
