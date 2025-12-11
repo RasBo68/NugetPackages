@@ -15,7 +15,7 @@
     "version": "1.0.0",
     "restore": {
       "projectUniqueName": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\XmlHandling\\XmlHandling.csproj",
-      "projectName": "RestApiClient",
+      "projectName": "XMLHandling",
       "projectPath": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\XmlHandling\\XmlHandling.csproj",
       "packagesPath": "C:\\Users\\Boztoprak\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\XmlHandling\\obj\\",
@@ -33,6 +33,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Users\\Boztoprak\\Desktop\\LocalNugetFeed": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

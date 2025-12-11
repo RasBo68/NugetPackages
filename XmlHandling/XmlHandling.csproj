@@ -4,11 +4,11 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-	<PackageId>RestApiClient</PackageId> <!-- Der Name des NuGet-Pakets -->
+	<PackageId>XMLHandling</PackageId> <!-- Der Name des NuGet-Pakets -->
 	<Version>1.0.0</Version> <!-- Die Version des Pakets -->
 	<Authors>Rasit Boztoprak</Authors> <!-- Der Autor des Pakets -->
 	<Description>Abstraktionsschicht für Restzugriffe</Description> <!-- Beschreibung -->
-	<PackageTags>rest api client, nuget</PackageTags> <!-- Tags für das Paket -->
+	<PackageTags>xml handling, nuget</PackageTags> <!-- Tags für das Paket -->
 	<RepositoryUrl>https://github.com/RasBo68/NugetPackages.git</RepositoryUrl> <!-- URL zum GitHub Repository -->
   </PropertyGroup>
 

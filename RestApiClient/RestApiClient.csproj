@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	<PackageId>RestApiClient</PackageId> <!-- Der Name des NuGet-Pakets -->
-	<Version>1.0.0</Version> <!-- Die Version des Pakets -->
+	<Version>1.0.2</Version> <!-- Die Version des Pakets -->
 	<Authors>Rasit Boztoprak</Authors> <!-- Der Autor des Pakets -->
 	<Description>Abstraktionsschicht für Restzugriffe</Description> <!-- Beschreibung -->
 	<PackageTags>rest api client, nuget</PackageTags> <!-- Tags für das Paket -->

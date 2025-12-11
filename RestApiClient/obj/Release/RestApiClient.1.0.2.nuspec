@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>RestApiClient</id>
+    <version>1.0.2</version>
+    <authors>Rasit Boztoprak</authors>
+    <description>Abstraktionsschicht für Restzugriffe</description>
+    <tags>rest api client, nuget</tags>
+    <repository type="git" url="https://github.com/RasBo68/NugetPackages.git" commit="4d9e48a41cbcbd67cc16e0f4581f94f83b69a702" />
+    <dependencies>
+      <group targetFramework="net8.0">
+        <dependency id="Newtonsoft.Json" version="13.0.4" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\Boztoprak\Desktop\NugetPackages\RestApiClient\bin\Release\net8.0\RestApiClient.dll" target="lib\net8.0\RestApiClient.dll" />
+  </files>
+</package>

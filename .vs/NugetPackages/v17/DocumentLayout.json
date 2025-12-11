@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{93C0C081-47E2-4FA4-A8E2-C0140B698183}|RestApiClient\\RestApiClient.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\restapiclient\\restapiclient.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{93C0C081-47E2-4FA4-A8E2-C0140B698183}|RestApiClient\\RestApiClient.csproj|solutionrelative:restapiclient\\restapiclient.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93C0C081-47E2-4FA4-A8E2-C0140B698183}|RestApiClient\\RestApiClient.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\restapiclient\\restapiclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93C0C081-47E2-4FA4-A8E2-C0140B698183}|RestApiClient\\RestApiClient.csproj|solutionrelative:restapiclient\\restapiclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93C0C081-47E2-4FA4-A8E2-C0140B698183}|RestApiClient\\RestApiClient.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\restapiclient\\irestapiclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93C0C081-47E2-4FA4-A8E2-C0140B698183}|RestApiClient\\RestApiClient.csproj|solutionrelative:restapiclient\\irestapiclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{990A7DCB-8CFA-4DFB-83DE-562DDE945D83}|XmlHandling\\XmlHandling.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\xmlhandling\\xmlhandling.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{990A7DCB-8CFA-4DFB-83DE-562DDE945D83}|XmlHandling\\XmlHandling.csproj|solutionrelative:xmlhandling\\xmlhandling.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{93C0C081-47E2-4FA4-A8E2-C0140B698183}|RestApiClient\\RestApiClient.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\restapiclient\\restapiclient.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{93C0C081-47E2-4FA4-A8E2-C0140B698183}|RestApiClient\\RestApiClient.csproj|solutionrelative:restapiclient\\restapiclient.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{7C71F279-C759-46D6-8DCF-9A0E0DD6BD50}|FileHandling\\FileHandling.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\filehandling\\filehandling.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{7C71F279-C759-46D6-8DCF-9A0E0DD6BD50}|FileHandling\\FileHandling.csproj|solutionrelative:filehandling\\filehandling.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C71F279-C759-46D6-8DCF-9A0E0DD6BD50}|FileHandling\\FileHandling.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\filehandling\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C71F279-C759-46D6-8DCF-9A0E0DD6BD50}|FileHandling\\FileHandling.csproj|solutionrelative:filehandling\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{990A7DCB-8CFA-4DFB-83DE-562DDE945D83}|XmlHandling\\XmlHandling.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\xmlhandling\\xmlservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,37 +42,87 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IRestApiClientService.cs",
+              "DocumentMoniker": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\RestApiClient\\IRestApiClientService.cs",
+              "RelativeDocumentMoniker": "RestApiClient\\IRestApiClientService.cs",
+              "ToolTip": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\RestApiClient\\IRestApiClientService.cs",
+              "RelativeToolTip": "RestApiClient\\IRestApiClientService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T12:14:53.874Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "RestApiClient",
+              "Title": "RestApiClientService.cs",
+              "DocumentMoniker": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\RestApiClient\\RestApiClientService.cs",
+              "RelativeDocumentMoniker": "RestApiClient\\RestApiClientService.cs",
+              "ToolTip": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\RestApiClient\\RestApiClientService.cs",
+              "RelativeToolTip": "RestApiClient\\RestApiClientService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAC/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T12:14:11.317Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FileHandling.csproj",
+              "DocumentMoniker": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\FileHandling\\FileHandling.csproj",
+              "RelativeDocumentMoniker": "FileHandling\\FileHandling.csproj",
+              "ToolTip": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\FileHandling\\FileHandling.csproj",
+              "RelativeToolTip": "FileHandling\\FileHandling.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-09T10:46:59.702Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FileService.cs",
+              "DocumentMoniker": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\FileHandling\\FileService.cs",
+              "RelativeDocumentMoniker": "FileHandling\\FileService.cs",
+              "ToolTip": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\FileHandling\\FileService.cs",
+              "RelativeToolTip": "FileHandling\\FileService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T07:30:26.154Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RestApiClient.csproj",
               "DocumentMoniker": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\RestApiClient\\RestApiClient.csproj",
               "RelativeDocumentMoniker": "RestApiClient\\RestApiClient.csproj",
               "ToolTip": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\RestApiClient\\RestApiClient.csproj",
               "RelativeToolTip": "RestApiClient\\RestApiClient.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-12-08T16:42:33.774Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "XmlHandling",
+              "DocumentIndex": 3,
+              "Title": "XmlHandling.csproj",
               "DocumentMoniker": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\XmlHandling\\XmlHandling.csproj",
               "RelativeDocumentMoniker": "XmlHandling\\XmlHandling.csproj",
               "ToolTip": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\XmlHandling\\XmlHandling.csproj",
               "RelativeToolTip": "XmlHandling\\XmlHandling.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABNAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAwAYAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-12-08T16:42:30.599Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "XmlService.cs",
               "DocumentMoniker": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\XmlHandling\\XmlService.cs",
               "RelativeDocumentMoniker": "XmlHandling\\XmlService.cs",
@@ -64,13 +130,12 @@
               "RelativeToolTip": "XmlHandling\\XmlService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T16:33:12.427Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-08T16:33:12.427Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DataRepository",
+              "DocumentIndex": 7,
+              "Title": "DataRepository.csproj",
               "DocumentMoniker": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\DataRepository\\DataRepository.csproj",
               "RelativeDocumentMoniker": "DataRepository\\DataRepository.csproj",
               "ToolTip": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\DataRepository\\DataRepository.csproj",

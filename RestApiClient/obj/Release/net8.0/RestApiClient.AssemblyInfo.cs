@@ -13,11 +13,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Rasit Boztoprak")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Abstraktionsschicht für Restzugriffe")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1c978e32f1f63debadd67c418ab2cd97f6a056a2")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.2.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.2+4d9e48a41cbcbd67cc16e0f4581f94f83b69a702")]
 [assembly: System.Reflection.AssemblyProductAttribute("RestApiClient")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RestApiClient")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.2.0")]
 [assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "https://github.com/RasBo68/NugetPackages.git")]
 
 // Von der MSBuild WriteCodeFragment-Klasse generiert.
