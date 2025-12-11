@@ -11,6 +11,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataRepository", "DataRepos
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlHandling", "XmlHandling\XmlHandling.csproj", "{990A7DCB-8CFA-4DFB-83DE-562DDE945D83}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IkarosImporter", "IkarosImporter\IkarosImporter.csproj", "{3FEA099D-ADC6-4B56-8195-D303BEF71BFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coeo.Extensions.FileHandling.Base", "Coeo.Extensions.FileHandling.Base\Coeo.Extensions.FileHandling.Base.csproj", "{98DAB1EA-6C88-4509-8237-31A9D9D38B82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coeo.Extensions.FileHandling.Xml", "Coeo.Extensions.FileHandling.Xml\Coeo.Extensions.FileHandling.Xml.csproj", "{377CF6FF-0A9C-4AD6-A79F-76CF280A2B6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coeo.Extensions.RestApiClient", "Coeo.Extensions.RestApiClient\Coeo.Extensions.RestApiClient.csproj", "{95D71183-30C6-4FEC-AFE0-AFBB0684DFD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coeo.Extensions.IkarosImport", "Coeo.Extensions.IkarosImport\Coeo.Extensions.IkarosImport.csproj", "{70B29666-B796-4AA5-B101-D991193E6DF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coeo.Extensions.DatabaseRepository", "Coeo.Extensions.DatabaseRepository\Coeo.Extensions.DatabaseRepository.csproj", "{2AF3E1C0-062F-458A-9A57-8702F0B32F81}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +45,30 @@ Global
 		{990A7DCB-8CFA-4DFB-83DE-562DDE945D83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{990A7DCB-8CFA-4DFB-83DE-562DDE945D83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{990A7DCB-8CFA-4DFB-83DE-562DDE945D83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FEA099D-ADC6-4B56-8195-D303BEF71BFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FEA099D-ADC6-4B56-8195-D303BEF71BFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FEA099D-ADC6-4B56-8195-D303BEF71BFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FEA099D-ADC6-4B56-8195-D303BEF71BFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98DAB1EA-6C88-4509-8237-31A9D9D38B82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98DAB1EA-6C88-4509-8237-31A9D9D38B82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98DAB1EA-6C88-4509-8237-31A9D9D38B82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98DAB1EA-6C88-4509-8237-31A9D9D38B82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{377CF6FF-0A9C-4AD6-A79F-76CF280A2B6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{377CF6FF-0A9C-4AD6-A79F-76CF280A2B6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{377CF6FF-0A9C-4AD6-A79F-76CF280A2B6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{377CF6FF-0A9C-4AD6-A79F-76CF280A2B6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95D71183-30C6-4FEC-AFE0-AFBB0684DFD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95D71183-30C6-4FEC-AFE0-AFBB0684DFD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95D71183-30C6-4FEC-AFE0-AFBB0684DFD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95D71183-30C6-4FEC-AFE0-AFBB0684DFD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70B29666-B796-4AA5-B101-D991193E6DF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70B29666-B796-4AA5-B101-D991193E6DF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70B29666-B796-4AA5-B101-D991193E6DF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70B29666-B796-4AA5-B101-D991193E6DF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AF3E1C0-062F-458A-9A57-8702F0B32F81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AF3E1C0-062F-458A-9A57-8702F0B32F81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AF3E1C0-062F-458A-9A57-8702F0B32F81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AF3E1C0-062F-458A-9A57-8702F0B32F81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

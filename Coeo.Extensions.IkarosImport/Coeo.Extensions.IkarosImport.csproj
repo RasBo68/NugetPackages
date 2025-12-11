@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	  <PackageId>Coeo.Extensions.IkarosImport</PackageId>
+	  <Version>1.0.0</Version>
+	  <Authors>Rasit Boztoprak</Authors>
+	  <Description>Importing files into Ikaros</Description>
+	  <PackageTags>file import ikaros, nuget</PackageTags>
+	  <RepositoryUrl>-</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="XSD\FormatDefinition.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+
+</Project>

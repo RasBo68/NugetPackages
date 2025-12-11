@@ -3,36 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{93C0C081-47E2-4FA4-A8E2-C0140B698183}|RestApiClient\\RestApiClient.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\restapiclient\\restapiclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{93C0C081-47E2-4FA4-A8E2-C0140B698183}|RestApiClient\\RestApiClient.csproj|solutionrelative:restapiclient\\restapiclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{95D71183-30C6-4FEC-AFE0-AFBB0684DFD2}|Coeo.Extensions.RestApiClient\\Coeo.Extensions.RestApiClient.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\coeo.extensions.restapiclient\\coeo.extensions.restapiclient.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{95D71183-30C6-4FEC-AFE0-AFBB0684DFD2}|Coeo.Extensions.RestApiClient\\Coeo.Extensions.RestApiClient.csproj|solutionrelative:coeo.extensions.restapiclient\\coeo.extensions.restapiclient.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{93C0C081-47E2-4FA4-A8E2-C0140B698183}|RestApiClient\\RestApiClient.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\restapiclient\\restapiclient.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{93C0C081-47E2-4FA4-A8E2-C0140B698183}|RestApiClient\\RestApiClient.csproj|solutionrelative:restapiclient\\restapiclient.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{70B29666-B796-4AA5-B101-D991193E6DF2}|Coeo.Extensions.IkarosImport\\Coeo.Extensions.IkarosImport.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\coeo.extensions.ikarosimport\\coeo.extensions.ikarosimport.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{70B29666-B796-4AA5-B101-D991193E6DF2}|Coeo.Extensions.IkarosImport\\Coeo.Extensions.IkarosImport.csproj|solutionrelative:coeo.extensions.ikarosimport\\coeo.extensions.ikarosimport.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{93C0C081-47E2-4FA4-A8E2-C0140B698183}|RestApiClient\\RestApiClient.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\restapiclient\\irestapiclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{93C0C081-47E2-4FA4-A8E2-C0140B698183}|RestApiClient\\RestApiClient.csproj|solutionrelative:restapiclient\\irestapiclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{377CF6FF-0A9C-4AD6-A79F-76CF280A2B6F}|Coeo.Extensions.FileHandling.Xml\\Coeo.Extensions.FileHandling.Xml.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\coeo.extensions.filehandling.xml\\coeo.extensions.filehandling.xml.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{377CF6FF-0A9C-4AD6-A79F-76CF280A2B6F}|Coeo.Extensions.FileHandling.Xml\\Coeo.Extensions.FileHandling.Xml.csproj|solutionrelative:coeo.extensions.filehandling.xml\\coeo.extensions.filehandling.xml.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98DAB1EA-6C88-4509-8237-31A9D9D38B82}|Coeo.Extensions.FileHandling.Base\\Coeo.Extensions.FileHandling.Base.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\coeo.extensions.filehandling.base\\coeo.extensions.filehandling.base.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{98DAB1EA-6C88-4509-8237-31A9D9D38B82}|Coeo.Extensions.FileHandling.Base\\Coeo.Extensions.FileHandling.Base.csproj|solutionrelative:coeo.extensions.filehandling.base\\coeo.extensions.filehandling.base.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AF3E1C0-062F-458A-9A57-8702F0B32F81}|Coeo.Extensions.DatabaseRepository\\Coeo.Extensions.DatabaseRepository.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\coeo.extensions.databaserepository\\coeo.extensions.databaserepository.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{2AF3E1C0-062F-458A-9A57-8702F0B32F81}|Coeo.Extensions.DatabaseRepository\\Coeo.Extensions.DatabaseRepository.csproj|solutionrelative:coeo.extensions.databaserepository\\coeo.extensions.databaserepository.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AF3E1C0-062F-458A-9A57-8702F0B32F81}|Coeo.Extensions.DatabaseRepository\\Coeo.Extensions.DatabaseRepository.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\coeo.extensions.databaserepository\\dbrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AF3E1C0-062F-458A-9A57-8702F0B32F81}|Coeo.Extensions.DatabaseRepository\\Coeo.Extensions.DatabaseRepository.csproj|solutionrelative:coeo.extensions.databaserepository\\dbrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{990A7DCB-8CFA-4DFB-83DE-562DDE945D83}|XmlHandling\\XmlHandling.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\xmlhandling\\xmlhandling.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{990A7DCB-8CFA-4DFB-83DE-562DDE945D83}|XmlHandling\\XmlHandling.csproj|solutionrelative:xmlhandling\\xmlhandling.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{93C0C081-47E2-4FA4-A8E2-C0140B698183}|RestApiClient\\RestApiClient.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\restapiclient\\restapiclient.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{93C0C081-47E2-4FA4-A8E2-C0140B698183}|RestApiClient\\RestApiClient.csproj|solutionrelative:restapiclient\\restapiclient.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FEA099D-ADC6-4B56-8195-D303BEF71BFA}|IkarosImporter\\IkarosImporter.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\ikarosimporter\\ikarosimporter.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{3FEA099D-ADC6-4B56-8195-D303BEF71BFA}|IkarosImporter\\IkarosImporter.csproj|solutionrelative:ikarosimporter\\ikarosimporter.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7C71F279-C759-46D6-8DCF-9A0E0DD6BD50}|FileHandling\\FileHandling.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\filehandling\\filehandling.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{7C71F279-C759-46D6-8DCF-9A0E0DD6BD50}|FileHandling\\FileHandling.csproj|solutionrelative:filehandling\\filehandling.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C71F279-C759-46D6-8DCF-9A0E0DD6BD50}|FileHandling\\FileHandling.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\filehandling\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C71F279-C759-46D6-8DCF-9A0E0DD6BD50}|FileHandling\\FileHandling.csproj|solutionrelative:filehandling\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{990A7DCB-8CFA-4DFB-83DE-562DDE945D83}|XmlHandling\\XmlHandling.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\xmlhandling\\xmlservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{990A7DCB-8CFA-4DFB-83DE-562DDE945D83}|XmlHandling\\XmlHandling.csproj|solutionrelative:xmlhandling\\xmlservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AE21175-E43F-4F09-B9DD-2DFB044BD4D4}|DataRepository\\DataRepository.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\datarepository\\datarepository.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{6AE21175-E43F-4F09-B9DD-2DFB044BD4D4}|DataRepository\\DataRepository.csproj|solutionrelative:datarepository\\datarepository.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,107 +50,136 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IRestApiClientService.cs",
-              "DocumentMoniker": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\RestApiClient\\IRestApiClientService.cs",
-              "RelativeDocumentMoniker": "RestApiClient\\IRestApiClientService.cs",
-              "ToolTip": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\RestApiClient\\IRestApiClientService.cs",
-              "RelativeToolTip": "RestApiClient\\IRestApiClientService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAABAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "DbRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\Coeo.Extensions.DatabaseRepository\\DbRepository.cs",
+              "RelativeDocumentMoniker": "Coeo.Extensions.DatabaseRepository\\DbRepository.cs",
+              "ToolTip": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\Coeo.Extensions.DatabaseRepository\\DbRepository.cs",
+              "RelativeToolTip": "Coeo.Extensions.DatabaseRepository\\DbRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T12:14:53.874Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "RestApiClientService.cs",
-              "DocumentMoniker": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\RestApiClient\\RestApiClientService.cs",
-              "RelativeDocumentMoniker": "RestApiClient\\RestApiClientService.cs",
-              "ToolTip": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\RestApiClient\\RestApiClientService.cs",
-              "RelativeToolTip": "RestApiClient\\RestApiClientService.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAuwA0AAABhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T12:14:11.317Z",
+              "WhenOpened": "2025-12-11T12:31:04.605Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "FileHandling.csproj",
-              "DocumentMoniker": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\FileHandling\\FileHandling.csproj",
-              "RelativeDocumentMoniker": "FileHandling\\FileHandling.csproj",
-              "ToolTip": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\FileHandling\\FileHandling.csproj",
-              "RelativeToolTip": "FileHandling\\FileHandling.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAbAAAAAAAAAA==",
+              "Title": "Coeo.Extensions.DatabaseRepository",
+              "DocumentMoniker": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\Coeo.Extensions.DatabaseRepository\\Coeo.Extensions.DatabaseRepository.csproj",
+              "RelativeDocumentMoniker": "Coeo.Extensions.DatabaseRepository\\Coeo.Extensions.DatabaseRepository.csproj",
+              "ToolTip": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\Coeo.Extensions.DatabaseRepository\\Coeo.Extensions.DatabaseRepository.csproj",
+              "RelativeToolTip": "Coeo.Extensions.DatabaseRepository\\Coeo.Extensions.DatabaseRepository.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-09T10:46:59.702Z",
+              "WhenOpened": "2025-12-11T12:29:12.006Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FileService.cs",
-              "DocumentMoniker": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\FileHandling\\FileService.cs",
-              "RelativeDocumentMoniker": "FileHandling\\FileService.cs",
-              "ToolTip": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\FileHandling\\FileService.cs",
-              "RelativeToolTip": "FileHandling\\FileService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T07:30:26.154Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RestApiClient.csproj",
-              "DocumentMoniker": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\RestApiClient\\RestApiClient.csproj",
-              "RelativeDocumentMoniker": "RestApiClient\\RestApiClient.csproj",
-              "ToolTip": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\RestApiClient\\RestApiClient.csproj",
-              "RelativeToolTip": "RestApiClient\\RestApiClient.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAPAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Coeo.Extensions.FileHandling.Xml",
+              "DocumentMoniker": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\Coeo.Extensions.FileHandling.Xml\\Coeo.Extensions.FileHandling.Xml.csproj",
+              "RelativeDocumentMoniker": "Coeo.Extensions.FileHandling.Xml\\Coeo.Extensions.FileHandling.Xml.csproj",
+              "ToolTip": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\Coeo.Extensions.FileHandling.Xml\\Coeo.Extensions.FileHandling.Xml.csproj",
+              "RelativeToolTip": "Coeo.Extensions.FileHandling.Xml\\Coeo.Extensions.FileHandling.Xml.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-08T16:42:33.774Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "XmlHandling.csproj",
-              "DocumentMoniker": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\XmlHandling\\XmlHandling.csproj",
-              "RelativeDocumentMoniker": "XmlHandling\\XmlHandling.csproj",
-              "ToolTip": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\XmlHandling\\XmlHandling.csproj",
-              "RelativeToolTip": "XmlHandling\\XmlHandling.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAwAYAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-08T16:42:30.599Z",
+              "WhenOpened": "2025-12-11T12:11:38.651Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "XmlService.cs",
-              "DocumentMoniker": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\XmlHandling\\XmlService.cs",
-              "RelativeDocumentMoniker": "XmlHandling\\XmlService.cs",
-              "ToolTip": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\XmlHandling\\XmlService.cs",
-              "RelativeToolTip": "XmlHandling\\XmlService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T16:33:12.427Z"
+              "Title": "XmlHandling",
+              "DocumentMoniker": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\XmlHandling\\XmlHandling.csproj",
+              "RelativeDocumentMoniker": "XmlHandling\\XmlHandling.csproj",
+              "ToolTip": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\XmlHandling\\XmlHandling.csproj",
+              "RelativeToolTip": "XmlHandling\\XmlHandling.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-11T12:11:35.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Coeo.Extensions.RestApiClient",
+              "DocumentMoniker": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\Coeo.Extensions.RestApiClient\\Coeo.Extensions.RestApiClient.csproj",
+              "RelativeDocumentMoniker": "Coeo.Extensions.RestApiClient\\Coeo.Extensions.RestApiClient.csproj",
+              "ToolTip": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\Coeo.Extensions.RestApiClient\\Coeo.Extensions.RestApiClient.csproj",
+              "RelativeToolTip": "Coeo.Extensions.RestApiClient\\Coeo.Extensions.RestApiClient.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-11T12:11:31.1Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "DataRepository.csproj",
-              "DocumentMoniker": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\DataRepository\\DataRepository.csproj",
-              "RelativeDocumentMoniker": "DataRepository\\DataRepository.csproj",
-              "ToolTip": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\DataRepository\\DataRepository.csproj",
-              "RelativeToolTip": "DataRepository\\DataRepository.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAaAAAAAAAAAA==",
+              "Title": "RestApiClient",
+              "DocumentMoniker": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\RestApiClient\\RestApiClient.csproj",
+              "RelativeDocumentMoniker": "RestApiClient\\RestApiClient.csproj",
+              "ToolTip": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\RestApiClient\\RestApiClient.csproj",
+              "RelativeToolTip": "RestApiClient\\RestApiClient.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-08T16:32:04.758Z",
+              "WhenOpened": "2025-12-11T12:11:27.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Coeo.Extensions.IkarosImport",
+              "DocumentMoniker": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\Coeo.Extensions.IkarosImport\\Coeo.Extensions.IkarosImport.csproj",
+              "RelativeDocumentMoniker": "Coeo.Extensions.IkarosImport\\Coeo.Extensions.IkarosImport.csproj",
+              "ToolTip": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\Coeo.Extensions.IkarosImport\\Coeo.Extensions.IkarosImport.csproj",
+              "RelativeToolTip": "Coeo.Extensions.IkarosImport\\Coeo.Extensions.IkarosImport.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-11T12:11:05.37Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IkarosImporter",
+              "DocumentMoniker": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\IkarosImporter\\IkarosImporter.csproj",
+              "RelativeDocumentMoniker": "IkarosImporter\\IkarosImporter.csproj",
+              "ToolTip": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\IkarosImporter\\IkarosImporter.csproj",
+              "RelativeToolTip": "IkarosImporter\\IkarosImporter.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-11T12:11:00.507Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Coeo.Extensions.FileHandling.Base",
+              "DocumentMoniker": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\Coeo.Extensions.FileHandling.Base\\Coeo.Extensions.FileHandling.Base.csproj",
+              "RelativeDocumentMoniker": "Coeo.Extensions.FileHandling.Base\\Coeo.Extensions.FileHandling.Base.csproj",
+              "ToolTip": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\Coeo.Extensions.FileHandling.Base\\Coeo.Extensions.FileHandling.Base.csproj",
+              "RelativeToolTip": "Coeo.Extensions.FileHandling.Base\\Coeo.Extensions.FileHandling.Base.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-11T12:10:55.888Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FileHandling",
+              "DocumentMoniker": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\FileHandling\\FileHandling.csproj",
+              "RelativeDocumentMoniker": "FileHandling\\FileHandling.csproj",
+              "ToolTip": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\FileHandling\\FileHandling.csproj",
+              "RelativeToolTip": "FileHandling\\FileHandling.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-11T12:10:25.762Z",
               "EditorCaption": ""
             }
           ]

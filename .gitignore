@@ -10,49 +10,28 @@
 [Aa]ssert/
 [Aa]ssertPublic/
 
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
+# Bin und obj Ordner (Build-Ergebnisse)
+bin/
+obj/
 
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
+# Visual Studio Dateien
+.vs/
+.vscode/
+.idea/
+.vscode-test/
 
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
-
-# User-specific files
+# Benutzer-spezifische Dateien
 *.user
 *.userosscache
 *.suo
 *.userprefs
 
-# User-specific files (Windows)
-*.suo
-*.user
-
-# User-specific files (macOS)
-.idea/
-
-# User-specific files (Visual Studio for Mac)
-.vscode/
-.vscode-test/
-
-# Windows Installer files
+# Windows Installer-Dateien
 *.cab
 *.msi
 *.msm
 *.msp
 
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
+# Temporäre Dateien
+Thumbs.db
+ehthumbs.db
