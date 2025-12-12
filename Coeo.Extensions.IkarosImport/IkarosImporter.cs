@@ -4,6 +4,8 @@
     {
         public void Import<T>(T entity)
         {
+            ArgumentNullException.ThrowIfNull(entity);
+
             // Implementation for importing to Ikaros
         }
     }

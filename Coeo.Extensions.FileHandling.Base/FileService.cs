@@ -2,7 +2,7 @@
 {
     public class FileService : IFileService
     {
-        private readonly string _argumentOutOfRangeExceptionMessage = "Es wurde versucht die Zeile {0} von der Datei {1} auszulesen.";
+        private readonly string _argumentOutOfRangeExceptionMessage = "An attempt was made to read line {0} from file {1}.";
 
         private readonly IDirectoryService _directoryService;
         private readonly IPathHelper _pathHelper;
@@ -15,6 +15,8 @@
 
         public async Task CreateNewFileAsync(string filePath)
         {
+            ArgumentNullException.ThrowIfNullOrWhiteSpace(filePath);
+
             var directory = _pathHelper.GetDirectoryName(filePath);
             if (!string.IsNullOrEmpty(directory))
             {
@@ -26,14 +28,26 @@
         }
         public async Task AppendLinesToFileAsync(string filePath, List<string> contentToWrite)
         {
+            ArgumentNullException.ThrowIfNullOrWhiteSpace(filePath);
+            ArgumentNullException.ThrowIfNull(contentToWrite);
+
             await File.AppendAllLinesAsync(filePath, contentToWrite);
         }
         public async Task<string> ReadAllLinesOfFileAsync(string filePath)
         {
+            ArgumentNullException.ThrowIfNullOrWhiteSpace(filePath);
+
             return await File.ReadAllTextAsync(filePath) ?? string.Empty;
         }
         public async Task<string> ReadLineOfFileAsync(string filePath, int lineToRead)
         {
+            ArgumentNullException.ThrowIfNullOrWhiteSpace(filePath);
+
+           if(lineToRead < 0)
+           {
+                throw new ArgumentOutOfRangeException(string.Format(_argumentOutOfRangeExceptionMessage, lineToRead, filePath));
+           }
+
             using var reader = new StreamReader(filePath);
             for (int lineIndex = 0; lineIndex <= lineToRead; lineIndex++)
             {
@@ -51,6 +65,8 @@
         }
         public async Task DeleteFileAsync(string filePath)
         {
+            ArgumentNullException.ThrowIfNullOrWhiteSpace(filePath);
+
             await Task.Run(() =>
             {
                 File.Delete(filePath);

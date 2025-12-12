@@ -12,6 +12,8 @@ namespace Coeo.Extensions.FileHandling.Xml
 
         public async Task XmlFromFile<TLoadObject>(string filePath)
         {
+            ArgumentNullException.ThrowIfNullOrWhiteSpace(filePath);
+
             await Task.Run(() =>
             {
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(TLoadObject));
@@ -23,6 +25,9 @@ namespace Coeo.Extensions.FileHandling.Xml
         }
         public async Task Xml2FileAsync<TSaveObject>(string filePath, TSaveObject tSaveObject)
         {
+            ArgumentNullException.ThrowIfNullOrWhiteSpace(filePath);
+            ArgumentNullException.ThrowIfNull(tSaveObject);
+
             await Task.Run(() =>
             {
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(TSaveObject));
@@ -44,6 +49,9 @@ namespace Coeo.Extensions.FileHandling.Xml
         }
         public async Task<string> Xml2String<TSaveObject>(string filePath, TSaveObject tSaveObject)
         {
+            ArgumentNullException.ThrowIfNullOrWhiteSpace(filePath);
+            ArgumentNullException.ThrowIfNull(tSaveObject);
+
             string xmlContent = string.Empty;
 
             await Task.Run(() =>

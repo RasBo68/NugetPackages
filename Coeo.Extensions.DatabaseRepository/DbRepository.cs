@@ -7,6 +7,10 @@ namespace Coeo.Extensions.DatabaseRepository
         protected readonly DbContext _context;
         protected readonly DbSet<TEntity> _dbSet;
 
+        private readonly string _argumentOutOfRangeExceptionMessage = "An attempt was made to {0} the entity with id {1}.";
+        private readonly string _read = "read";
+        private readonly string _delete = "delete";
+
         // ############################################# Wichtiger Hinweis: Warum kein Lock? #############################################
         // 
         // 1)
@@ -33,18 +37,25 @@ namespace Coeo.Extensions.DatabaseRepository
 
         public virtual async Task<TEntity> GetByIdAsync(int id)
         {
+            if (id < 1)
+                throw new ArgumentOutOfRangeException(string.Format(_argumentOutOfRangeExceptionMessage, _read, id.ToString()));
+
             return await _dbSet.FindAsync(id) ?? Activator.CreateInstance<TEntity>();
         }
 
         public async Task AddAsync(TEntity entity)
         {
+            ArgumentNullException.ThrowIfNull(entity);
+
             await _dbSet.AddAsync(entity);
             await _context.SaveChangesAsync();
         }
 
         public async Task AddRangeAsync(IEnumerable<TEntity> entities)
         {
-            if (entities == null || entities.ToList().Count == 0)
+            ArgumentNullException.ThrowIfNull(entities);
+
+            if (entities.ToList().Count == 0)
                 return;
 
             await _dbSet.AddRangeAsync(entities);
@@ -53,12 +64,17 @@ namespace Coeo.Extensions.DatabaseRepository
 
         public virtual async Task UpdateAsync(TEntity entity)
         {
+            ArgumentNullException.ThrowIfNull(entity);
+
             _dbSet.Update(entity);
             await _context.SaveChangesAsync();
         }
 
         public async Task DeleteAsync(int id)
         {
+            if (id < 1)
+                throw new ArgumentOutOfRangeException(string.Format(_argumentOutOfRangeExceptionMessage, _delete, id.ToString()));
+
             var entity = await GetByIdAsync(id);
             if (entity != null)
             {
@@ -69,7 +85,9 @@ namespace Coeo.Extensions.DatabaseRepository
 
         public async Task DeleteRangeAsync(IEnumerable<TEntity> entities)
         {
-            if (entities == null || entities.ToList().Count==0)
+            ArgumentNullException.ThrowIfNull(entities);
+
+            if (entities.ToList().Count==0)
                 return;
 
             _dbSet.RemoveRange(entities);

@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	  <PackageId>Coeo.Extensions.DatabaseRepository</PackageId>
-	  <Version>1.0.0</Version>
+	  <Version>1.0.1</Version>
 	  <Authors>Rasit Boztoprak</Authors>
 	  <Description>Abstraction layer for database access</Description>
 	  <PackageTags>database repository, nuget</PackageTags>

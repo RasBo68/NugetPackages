@@ -1,9 +1,11 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.IO;
+using System.Text.RegularExpressions;
 
 namespace Coeo.Extensions.FileHandling.Base
 {
     public class DirectoryService : IDirectoryService
     {
+        private readonly string _isFilePattern = @"^[a-zA-Z]:\\(?:[\w-]+\\)*[\w-]+\.[a-zA-Z0-9]+$";
         private readonly IPathHelper _pathHelper;
 
         public DirectoryService(IPathHelper pathHelper)
@@ -12,6 +14,8 @@ namespace Coeo.Extensions.FileHandling.Base
         }
         public async Task CreateDirectoryAsync(string directory)
         {
+            ArgumentNullException.ThrowIfNullOrWhiteSpace(directory);
+
             string dir = directory;
 
             if (IsPathToFile(directory))
@@ -29,6 +33,8 @@ namespace Coeo.Extensions.FileHandling.Base
         }
         public async Task<List<string>> GetFilenames(string directory)
         {
+            ArgumentNullException.ThrowIfNullOrWhiteSpace(directory);
+
             var filenames = new List<string>();
 
             // EnumerateFiles ist synchron und lädt immer wieder einen Dateipfad in den Arbeitsspeicher und würde den Thread bei vielen Dateien blockieren
@@ -42,6 +48,9 @@ namespace Coeo.Extensions.FileHandling.Base
         }
         public async Task<List<string>> GetFilenamesWithSpecificExtensionAsync(string directory, string fileExtension)
         {
+            ArgumentNullException.ThrowIfNullOrWhiteSpace(directory);
+            ArgumentNullException.ThrowIfNullOrWhiteSpace(fileExtension);
+
             List<string> filenames = await GetFilenames(directory);
 
             return filenames
@@ -50,9 +59,8 @@ namespace Coeo.Extensions.FileHandling.Base
         }
         private bool IsPathToFile(string path)
         {
-            string pattern = @"^[a-zA-Z]:\\(?:[\w-]+\\)*[\w-]+\.[a-zA-Z0-9]+$";
-            var i = Regex.IsMatch(path, pattern);
-            return Regex.IsMatch(path, pattern);
+            var i = Regex.IsMatch(path, _isFilePattern);
+            return Regex.IsMatch(path, _isFilePattern);
         }
     }
 }

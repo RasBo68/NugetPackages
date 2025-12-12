@@ -25,6 +25,8 @@ namespace Coeo.Extensions.RestApiClient
 
         private async Task<HttpResponseMessage> RequestInternal(string apiUrl, RequestType requestType, List<HttpRequestHeaderSimplified>? httpRequestHeaders = null, object ? sendObject=null)
         {
+            ArgumentNullException.ThrowIfNullOrWhiteSpace(apiUrl);
+
             using (var client = new HttpClient())
             {
                 if (httpRequestHeaders != null)
