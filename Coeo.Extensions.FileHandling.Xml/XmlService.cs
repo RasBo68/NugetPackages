@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using Coeo.Extensions.FileHandling.Base;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Serialization;
@@ -7,12 +8,12 @@ namespace Coeo.Extensions.FileHandling.Xml
 {
     public class XmlService : IXmlService
     {
-        private readonly string identChars = "\t";
-        private readonly string newLineChars = "\n";
+        private const string IDENT_CHARS = "\t";
+        private const string NEW_LINE_CHARS = "\n";
 
         public async Task XmlFromFile<TLoadObject>(string filePath)
         {
-            ArgumentNullException.ThrowIfNullOrWhiteSpace(filePath);
+            filePath.CheckFilePathString();
 
             await Task.Run(() =>
             {
@@ -25,19 +26,18 @@ namespace Coeo.Extensions.FileHandling.Xml
         }
         public async Task Xml2FileAsync<TSaveObject>(string filePath, TSaveObject tSaveObject)
         {
-            ArgumentNullException.ThrowIfNullOrWhiteSpace(filePath);
-            ArgumentNullException.ThrowIfNull(tSaveObject);
+            filePath.CheckFilePathString();
 
             await Task.Run(() =>
             {
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(TSaveObject));
                 XmlSerializerNamespaces xmlSerializerNamespaces = new XmlSerializerNamespaces();
-                xmlSerializerNamespaces.Add(string.Empty, string.Empty); // Unterdrückt die Namespaces
+                xmlSerializerNamespaces.Add(string.Empty, string.Empty); //deletes xml namespaces
                 XmlWriterSettings XmlWriterSettings = new XmlWriterSettings
                 {
                     Indent = true,
-                    IndentChars = identChars,  // Verwenden Sie einen Tab für Einrückungen
-                    NewLineChars = newLineChars,  // Stellen Sie sicher, dass Zeilenumbrüche konsistent sind (optional)
+                    IndentChars = IDENT_CHARS, 
+                    NewLineChars = NEW_LINE_CHARS,
                     NewLineHandling = NewLineHandling.Replace,
                     OmitXmlDeclaration = true,
                 };
@@ -49,8 +49,7 @@ namespace Coeo.Extensions.FileHandling.Xml
         }
         public async Task<string> Xml2String<TSaveObject>(string filePath, TSaveObject tSaveObject)
         {
-            ArgumentNullException.ThrowIfNullOrWhiteSpace(filePath);
-            ArgumentNullException.ThrowIfNull(tSaveObject);
+            filePath.CheckFilePathString();
 
             string xmlContent = string.Empty;
 
@@ -58,14 +57,14 @@ namespace Coeo.Extensions.FileHandling.Xml
             {
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(TSaveObject));
                 XmlSerializerNamespaces xmlSerializerNamespaces = new XmlSerializerNamespaces();
-                xmlSerializerNamespaces.Add(string.Empty, string.Empty); // Unterdrücke die Namespaces
+                xmlSerializerNamespaces.Add(string.Empty, string.Empty); 
                 XmlWriterSettings xmlWriterSettings = new XmlWriterSettings
                 {
                     Indent = true,
-                    IndentChars = "\t",  // Tab für Einrückungen
-                    NewLineChars = "\n",  // Zeilenumbrüche konsistent
+                    IndentChars = IDENT_CHARS,  
+                    NewLineChars = NEW_LINE_CHARS,  
                     NewLineHandling = NewLineHandling.Replace,
-                    OmitXmlDeclaration = true,  // XML-Deklaration weglassen
+                    OmitXmlDeclaration = true, 
                 };
 
                 StringBuilder stringBuilder = new StringBuilder();

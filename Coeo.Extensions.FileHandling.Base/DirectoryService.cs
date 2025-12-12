@@ -14,7 +14,7 @@ namespace Coeo.Extensions.FileHandling.Base
         }
         public async Task CreateDirectoryAsync(string directory)
         {
-            ArgumentNullException.ThrowIfNullOrWhiteSpace(directory);
+            directory.CheckDirectoryString();
 
             string dir = directory;
 
@@ -33,7 +33,7 @@ namespace Coeo.Extensions.FileHandling.Base
         }
         public async Task<List<string>> GetFilenames(string directory)
         {
-            ArgumentNullException.ThrowIfNullOrWhiteSpace(directory);
+            directory.CheckDirectoryString();
 
             var filenames = new List<string>();
 
@@ -48,8 +48,10 @@ namespace Coeo.Extensions.FileHandling.Base
         }
         public async Task<List<string>> GetFilenamesWithSpecificExtensionAsync(string directory, string fileExtension)
         {
-            ArgumentNullException.ThrowIfNullOrWhiteSpace(directory);
-            ArgumentNullException.ThrowIfNullOrWhiteSpace(fileExtension);
+            directory.CheckDirectoryString();
+
+            if (string.IsNullOrEmpty(fileExtension) || string.IsNullOrWhiteSpace(fileExtension))
+                throw new InvalidOperationException("fileExtension is empty or just whitespace.");
 
             List<string> filenames = await GetFilenames(directory);
 
@@ -62,5 +64,6 @@ namespace Coeo.Extensions.FileHandling.Base
             var i = Regex.IsMatch(path, _isFilePattern);
             return Regex.IsMatch(path, _isFilePattern);
         }
+   
     }
 }

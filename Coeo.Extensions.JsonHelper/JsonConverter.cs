@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.Data;
+using System.Text.Json;
 
 namespace Coeo.Extensions.JsonHelper
 {
@@ -6,16 +7,15 @@ namespace Coeo.Extensions.JsonHelper
     {
         public string Convert2JsonString(object entity)
         {
-            ArgumentNullException.ThrowIfNull(entity);
-
-            return JsonConvert.SerializeObject(entity);
+            return JsonSerializer.Serialize(entity);
         }
 
         public T Convert2Entity<T>(string jsonString)
         {
-            ArgumentNullException.ThrowIfNullOrWhiteSpace(jsonString);
+            if (string.IsNullOrEmpty(jsonString) || string.IsNullOrWhiteSpace(jsonString))
+                throw new InvalidOperationException("Json string is empty or just whitespace.");
 
-            return JsonConvert.DeserializeObject<T>(jsonString) ?? Activator.CreateInstance<T>();
+            return JsonSerializer.Deserialize<T>(jsonString) ?? Activator.CreateInstance<T>();
         }
     }
 }

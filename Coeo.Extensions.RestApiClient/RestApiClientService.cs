@@ -1,12 +1,13 @@
-﻿using Newtonsoft.Json;
+﻿
 using System.Net;
 using System.Text;
+using System.Text.Json;
 
 namespace Coeo.Extensions.RestApiClient
 {
     public class RestApiClientService : IRestApiClientService
     {
-        private readonly string _mediaType = "application/json";
+        private const string MEDIA_TYPE = "application/json";
 
         public async Task<HttpResponseMessage> RequestPost(string apiUrl, object sendObject, List<HttpRequestHeaderSimplified>? httpRequestHeaders = null)
         {
@@ -25,7 +26,8 @@ namespace Coeo.Extensions.RestApiClient
 
         private async Task<HttpResponseMessage> RequestInternal(string apiUrl, RequestType requestType, List<HttpRequestHeaderSimplified>? httpRequestHeaders = null, object ? sendObject=null)
         {
-            ArgumentNullException.ThrowIfNullOrWhiteSpace(apiUrl);
+            if (string.IsNullOrEmpty(apiUrl) || string.IsNullOrWhiteSpace(apiUrl))
+                throw new InvalidOperationException("apiUrl is empty or just whitespace.");
 
             using (var client = new HttpClient())
             {
@@ -47,8 +49,8 @@ namespace Coeo.Extensions.RestApiClient
                     if (sendObject == null)
                         return apiResponse;
 
-                    var sendObjectAsJsonString = JsonConvert.SerializeObject(sendObject);
-                    var apiBody = new StringContent(sendObjectAsJsonString, Encoding.UTF8, _mediaType);
+                    var sendObjectAsJsonString = JsonSerializer.Serialize(sendObject);
+                    var apiBody = new StringContent(sendObjectAsJsonString, Encoding.UTF8, MEDIA_TYPE);
 
                     if (requestType == RequestType.post)
                         apiResponse = await client.PostAsync(apiUrl, apiBody);

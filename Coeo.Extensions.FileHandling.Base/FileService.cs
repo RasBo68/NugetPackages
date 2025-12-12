@@ -15,7 +15,7 @@
 
         public async Task CreateNewFileAsync(string filePath)
         {
-            ArgumentNullException.ThrowIfNullOrWhiteSpace(filePath);
+            filePath.CheckFilePathString();
 
             var directory = _pathHelper.GetDirectoryName(filePath);
             if (!string.IsNullOrEmpty(directory))
@@ -28,22 +28,21 @@
         }
         public async Task AppendLinesToFileAsync(string filePath, List<string> contentToWrite)
         {
-            ArgumentNullException.ThrowIfNullOrWhiteSpace(filePath);
-            ArgumentNullException.ThrowIfNull(contentToWrite);
+            filePath.CheckFilePathString();
 
             await File.AppendAllLinesAsync(filePath, contentToWrite);
         }
         public async Task<string> ReadAllLinesOfFileAsync(string filePath)
         {
-            ArgumentNullException.ThrowIfNullOrWhiteSpace(filePath);
+            filePath.CheckFilePathString();
 
             return await File.ReadAllTextAsync(filePath) ?? string.Empty;
         }
         public async Task<string> ReadLineOfFileAsync(string filePath, int lineToRead)
         {
-            ArgumentNullException.ThrowIfNullOrWhiteSpace(filePath);
+            filePath.CheckFilePathString();
 
-           if(lineToRead < 0)
+            if (lineToRead < 0)
            {
                 throw new ArgumentOutOfRangeException(string.Format(_argumentOutOfRangeExceptionMessage, lineToRead, filePath));
            }
@@ -65,7 +64,7 @@
         }
         public async Task DeleteFileAsync(string filePath)
         {
-            ArgumentNullException.ThrowIfNullOrWhiteSpace(filePath);
+            filePath.CheckFilePathString();
 
             await Task.Run(() =>
             {
