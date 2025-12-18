@@ -3,17 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36717.8
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coeo.Extensions.FileHandling.Base", "Coeo.Extensions.FileHandling.Base\Coeo.Extensions.FileHandling.Base.csproj", "{98DAB1EA-6C88-4509-8237-31A9D9D38B82}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coeo.Extensions.FileHandling.Xml", "Coeo.Extensions.FileHandling.Xml\Coeo.Extensions.FileHandling.Xml.csproj", "{377CF6FF-0A9C-4AD6-A79F-76CF280A2B6F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coeo.Extensions.RestApiClient", "Coeo.Extensions.RestApiClient\Coeo.Extensions.RestApiClient.csproj", "{95D71183-30C6-4FEC-AFE0-AFBB0684DFD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coeo.Extensions.IkarosImport", "Coeo.Extensions.IkarosImport\Coeo.Extensions.IkarosImport.csproj", "{70B29666-B796-4AA5-B101-D991193E6DF2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coeo.Extensions.DatabaseRepository", "Coeo.Extensions.DatabaseRepository\Coeo.Extensions.DatabaseRepository.csproj", "{2AF3E1C0-062F-458A-9A57-8702F0B32F81}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coeo.Extensions.JsonHelper", "Coeo.Extensions.JsonHelper\Coeo.Extensions.JsonHelper.csproj", "{170A313A-68DA-4B56-9FCF-283647D3EC84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coeo.FileSystem.Repositories.Database", "Coeo.FileSystem.Repositories.Database\Coeo.FileSystem.Repositories.Database.csproj", "{8C8573E0-764E-41E8-A251-9ECE5E89CB8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coeo.FileSystem.Repositories.Files", "Coeo.FileSystem.Repositories.Files\Coeo.FileSystem.Repositories.Files.csproj", "{BE9929C5-B3F3-4274-92B0-D62373B0C4F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{98DAB1EA-6C88-4509-8237-31A9D9D38B82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{98DAB1EA-6C88-4509-8237-31A9D9D38B82}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{98DAB1EA-6C88-4509-8237-31A9D9D38B82}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{98DAB1EA-6C88-4509-8237-31A9D9D38B82}.Release|Any CPU.Build.0 = Release|Any CPU
 		{377CF6FF-0A9C-4AD6-A79F-76CF280A2B6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{377CF6FF-0A9C-4AD6-A79F-76CF280A2B6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{377CF6FF-0A9C-4AD6-A79F-76CF280A2B6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,18 +27,18 @@ Global
 		{95D71183-30C6-4FEC-AFE0-AFBB0684DFD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95D71183-30C6-4FEC-AFE0-AFBB0684DFD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95D71183-30C6-4FEC-AFE0-AFBB0684DFD2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{70B29666-B796-4AA5-B101-D991193E6DF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{70B29666-B796-4AA5-B101-D991193E6DF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{70B29666-B796-4AA5-B101-D991193E6DF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{70B29666-B796-4AA5-B101-D991193E6DF2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2AF3E1C0-062F-458A-9A57-8702F0B32F81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2AF3E1C0-062F-458A-9A57-8702F0B32F81}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2AF3E1C0-062F-458A-9A57-8702F0B32F81}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2AF3E1C0-062F-458A-9A57-8702F0B32F81}.Release|Any CPU.Build.0 = Release|Any CPU
 		{170A313A-68DA-4B56-9FCF-283647D3EC84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{170A313A-68DA-4B56-9FCF-283647D3EC84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{170A313A-68DA-4B56-9FCF-283647D3EC84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{170A313A-68DA-4B56-9FCF-283647D3EC84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C8573E0-764E-41E8-A251-9ECE5E89CB8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C8573E0-764E-41E8-A251-9ECE5E89CB8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C8573E0-764E-41E8-A251-9ECE5E89CB8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C8573E0-764E-41E8-A251-9ECE5E89CB8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE9929C5-B3F3-4274-92B0-D62373B0C4F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE9929C5-B3F3-4274-92B0-D62373B0C4F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE9929C5-B3F3-4274-92B0-D62373B0C4F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE9929C5-B3F3-4274-92B0-D62373B0C4F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

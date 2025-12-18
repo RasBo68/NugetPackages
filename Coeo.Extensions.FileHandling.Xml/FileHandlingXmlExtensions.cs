@@ -1,5 +1,4 @@
-﻿
-namespace Coeo.Extensions.FileHandling.Base
+﻿namespace Coeo.Extensions.FileHandling.Xml
 {
     internal static class FileHandlingExtensions
     {

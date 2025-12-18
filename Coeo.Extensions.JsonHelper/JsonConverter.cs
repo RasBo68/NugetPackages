@@ -1,4 +1,4 @@
-﻿using System.Data;
+﻿
 using System.Text.Json;
 
 namespace Coeo.Extensions.JsonHelper
@@ -15,7 +15,24 @@ namespace Coeo.Extensions.JsonHelper
             if (string.IsNullOrEmpty(jsonString) || string.IsNullOrWhiteSpace(jsonString))
                 throw new InvalidOperationException("Json string is empty or just whitespace.");
 
-            return JsonSerializer.Deserialize<T>(jsonString) ?? Activator.CreateInstance<T>();
+            try
+            {
+                var options = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true,
+                };
+
+                T val = JsonSerializer.Deserialize<T>(jsonString, options);
+                if (val == null)
+                {
+                    throw new InvalidOperationException("Deserialization resulted in null.");
+                }
+                return val;
+            }
+            catch (JsonException ex)
+            {
+                throw new InvalidOperationException("Error during JSON deserialization", ex);
+            }
         }
     }
 }
