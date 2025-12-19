@@ -1,6 +1,7 @@
 ﻿using Coeo.FileSystem.Repositories.Files.Extensions;
 using Coeo.FileSystem.Repositories.Files.Models;
 using Renci.SshNet;
+using System.Text;
 
 namespace Coeo.FileSystem.Repositories.Files
 {
@@ -92,7 +93,7 @@ namespace Coeo.FileSystem.Repositories.Files
             using var ms = new MemoryStream(); // Buffer in ram memory, which behaves like a file
             await _client.DownloadFileAsync(remoteFilePath, ms); // download file from sftp to memory stream
             ms.Position = 0;    // after download the cursor of memory stream is at the end, set position to 0 to read from the beginning
-            using var sr = new StreamReader(ms);    // stream reader to read from memory stream
+            using var sr = new StreamReader(ms, Encoding.UTF8);    // stream reader to read from memory stream
             var contentString = sr.ReadToEnd();     // conversion bytes 2 string
             return contentString;
         }
