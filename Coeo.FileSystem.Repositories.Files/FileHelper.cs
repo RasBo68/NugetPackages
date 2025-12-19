@@ -4,7 +4,8 @@
     {
         public Task CheckFileAsync(string filePath)
         {
-            if (!File.Exists(filePath)) // no asynchronous version available, cause operation is fast
+            var fileExists = File.Exists(filePath);
+            if (!fileExists)
                 throw new InvalidOperationException(string.Format(FILE_DOES_NOT_EXIST_ERROR, filePath));
 
             return Task.CompletedTask;

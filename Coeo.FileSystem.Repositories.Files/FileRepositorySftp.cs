@@ -1,6 +1,6 @@
-﻿using Coeo.FileSystem.Repositories.Files.Models;
+﻿using Coeo.FileSystem.Repositories.Files.Extensions;
+using Coeo.FileSystem.Repositories.Files.Models;
 using Renci.SshNet;
-using System.IO;
 
 namespace Coeo.FileSystem.Repositories.Files
 {
@@ -26,9 +26,7 @@ namespace Coeo.FileSystem.Repositories.Files
             _fileHelper = fileHelper;
             _pathHelper = pathHelper;
             _client = client;
-            _client.Connect();
-            if (!_client.IsConnected)
-                throw new InvalidOperationException(SFTP_CONNECTION_ERROR);
+            _client.ConnectSftpClient();
         }
 
         public async Task UploadAllFilesAsync(List<FileContent> contentStrings, string remoteDirectory)
@@ -53,7 +51,6 @@ namespace Coeo.FileSystem.Repositories.Files
                 var downloadedContent = await DownloadFileAsync(file); 
                 fileContentStrings.Add(downloadedContent);
             }
-
 
             return fileContentStrings;
         }
@@ -82,7 +79,6 @@ namespace Coeo.FileSystem.Repositories.Files
         public async Task UploadFileAsync(string contentString, string remoteFilePath)
         {
             _pathHelper.CheckPathString(remoteFilePath);
-            await _fileHelper.CheckFileAsync(remoteFilePath);
             var contentBytes = System.Text.Encoding.UTF8.GetBytes(contentString); // convert string to byte array
             using var ms = new MemoryStream(contentBytes);  // create memory stream in ram memory from byte array
             await _client.UploadFileAsync(ms, remoteFilePath);

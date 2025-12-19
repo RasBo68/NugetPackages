@@ -1,11 +1,12 @@
-﻿namespace Coeo.Extensions.FileHandling.Xml
+﻿namespace Coeo.Converters.Xml.Extensions
 {
     internal static class FileHandlingExtensions
     {
+        private const string EMPTY_STRING_ERROR = "filePath is empty or just whitespace.";
         internal static void CheckFilePathString(this string filePath)
         {
             if (string.IsNullOrEmpty(filePath) || string.IsNullOrWhiteSpace(filePath))
-                throw new InvalidOperationException("filePath is empty or just whitespace.");
+                throw new InvalidOperationException(EMPTY_STRING_ERROR);
         }
     }
 }

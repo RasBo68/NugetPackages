@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36717.8
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coeo.Extensions.FileHandling.Xml", "Coeo.Extensions.FileHandling.Xml\Coeo.Extensions.FileHandling.Xml.csproj", "{377CF6FF-0A9C-4AD6-A79F-76CF280A2B6F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coeo.Extensions.RestApiClient", "Coeo.Extensions.RestApiClient\Coeo.Extensions.RestApiClient.csproj", "{95D71183-30C6-4FEC-AFE0-AFBB0684DFD2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coeo.Extensions.JsonHelper", "Coeo.Extensions.JsonHelper\Coeo.Extensions.JsonHelper.csproj", "{170A313A-68DA-4B56-9FCF-283647D3EC84}"
@@ -13,16 +11,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coeo.FileSystem.Repositorie
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coeo.FileSystem.Repositories.Files", "Coeo.FileSystem.Repositories.Files\Coeo.FileSystem.Repositories.Files.csproj", "{BE9929C5-B3F3-4274-92B0-D62373B0C4F5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coeo.Converters.Xml", "Coeo.Converters.Xml\Coeo.Converters.Xml.csproj", "{3ACD1199-ACCA-4DCA-A5BB-4D61257C52F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{377CF6FF-0A9C-4AD6-A79F-76CF280A2B6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{377CF6FF-0A9C-4AD6-A79F-76CF280A2B6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{377CF6FF-0A9C-4AD6-A79F-76CF280A2B6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{377CF6FF-0A9C-4AD6-A79F-76CF280A2B6F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{95D71183-30C6-4FEC-AFE0-AFBB0684DFD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{95D71183-30C6-4FEC-AFE0-AFBB0684DFD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95D71183-30C6-4FEC-AFE0-AFBB0684DFD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{BE9929C5-B3F3-4274-92B0-D62373B0C4F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE9929C5-B3F3-4274-92B0-D62373B0C4F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE9929C5-B3F3-4274-92B0-D62373B0C4F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ACD1199-ACCA-4DCA-A5BB-4D61257C52F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ACD1199-ACCA-4DCA-A5BB-4D61257C52F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ACD1199-ACCA-4DCA-A5BB-4D61257C52F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ACD1199-ACCA-4DCA-A5BB-4D61257C52F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

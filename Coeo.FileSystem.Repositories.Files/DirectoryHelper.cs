@@ -9,7 +9,8 @@
         }
         public Task CheckDirectoryAsync(string directory)
         {
-            if (Directory.Exists(directory)) // no asynchronous version available, cause operation is fast
+            var fileExists = Directory.Exists(directory);
+            if (!fileExists) // no asynchronous version available, cause operation is fast
                 throw new InvalidOperationException(string.Format(Directory_DOES_NOT_EXIST_ERROR, directory));
 
             return Task.CompletedTask;

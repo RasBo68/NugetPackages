@@ -1,11 +1,11 @@
-﻿using System.Text;
-using System.Text.RegularExpressions;
+﻿using Coeo.Converters.Xml.Extensions;
+using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace Coeo.Extensions.FileHandling.Xml
+namespace Coeo.Converters.Xml
 {
-    public class XmlService : IXmlService
+    public class XmlConverter : IXmlConverter
     {
         private const string IDENT_CHARS = "\t";
         private const string NEW_LINE_CHARS = "\n";

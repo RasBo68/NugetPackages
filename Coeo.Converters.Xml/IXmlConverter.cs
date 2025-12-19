@@ -1,6 +1,6 @@
-﻿namespace Coeo.Extensions.FileHandling.Xml
+﻿namespace Coeo.Converters.Xml
 {
-    public interface IXmlService
+    public interface IXmlConverter
     {
         Task XmlFromFile<TLoadObject>(string filePath);
         Task Xml2FileAsync<TSaveObject>(string filePath, TSaveObject tSaveObject);

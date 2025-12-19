@@ -1,4 +1,5 @@
-﻿using Renci.SshNet;
+﻿using Coeo.FileSystem.Repositories.Files.Extensions;
+using Renci.SshNet;
 
 namespace Coeo.FileSystem.Repositories.Files
 {
@@ -10,9 +11,7 @@ namespace Coeo.FileSystem.Repositories.Files
         public DirectoryHelperSftp(SftpClient client, IPathHelper pathHelper)
         {
             _client = client;
-            _client.Connect();
-            if (!_client.IsConnected)
-                throw new InvalidOperationException(SFTP_CONNECTION_ERROR);
+            _client.ConnectSftpClient();
         }
         public async Task CheckDirectoryAsync(string remoteDirectory)
         {
