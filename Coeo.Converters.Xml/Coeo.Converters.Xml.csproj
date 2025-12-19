@@ -4,6 +4,12 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	  <PackageId>Coeo.Converters.Xml</PackageId>
+	  <Version>1.0.1</Version>
+	  <Authors>Rasit Boztoprak</Authors>
+	  <Description>Abstraction layer for xml conversion methods</Description>
+	  <PackageTags>xml, conversion, nuget</PackageTags>
+	  <RepositoryUrl>-</RepositoryUrl>
   </PropertyGroup>
 
 </Project>

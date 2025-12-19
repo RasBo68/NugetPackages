@@ -10,11 +10,12 @@ namespace Coeo.Converters.Xml
         private const string IDENT_CHARS = "\t";
         private const string NEW_LINE_CHARS = "\n";
 
-        public async Task XmlFromFile<TLoadObject>(string filePath)
+
+        public async Task<TLoadObject> ConvertXmlString2Object<TLoadObject>(string filePath)
         {
             filePath.CheckFilePathString();
 
-            await Task.Run(() =>
+            return await Task.Run(() =>
             {
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(TLoadObject));
                 using (StreamReader streamReader = new StreamReader(filePath))
@@ -23,30 +24,7 @@ namespace Coeo.Converters.Xml
                 }
             });
         }
-        public async Task Xml2FileAsync<TSaveObject>(string filePath, TSaveObject tSaveObject)
-        {
-            filePath.CheckFilePathString();
-
-            await Task.Run(() =>
-            {
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(TSaveObject));
-                XmlSerializerNamespaces xmlSerializerNamespaces = new XmlSerializerNamespaces();
-                xmlSerializerNamespaces.Add(string.Empty, string.Empty); //deletes xml namespaces
-                XmlWriterSettings XmlWriterSettings = new XmlWriterSettings
-                {
-                    Indent = true,
-                    IndentChars = IDENT_CHARS, 
-                    NewLineChars = NEW_LINE_CHARS,
-                    NewLineHandling = NewLineHandling.Replace,
-                    OmitXmlDeclaration = true,
-                };
-                using (XmlWriter xmlWriter = XmlWriter.Create(filePath, XmlWriterSettings))
-                {
-                    xmlSerializer.Serialize(xmlWriter, tSaveObject, xmlSerializerNamespaces);
-                }
-            });
-        }
-        public async Task<string> Xml2String<TSaveObject>(string filePath, TSaveObject tSaveObject)
+        public async Task<string> ConvertObject2XmlString<TSaveObject>(string filePath, TSaveObject tSaveObject)
         {
             filePath.CheckFilePathString();
 
