@@ -12,14 +12,14 @@ namespace Coeo.FileSystem.Repositories.Files
         }
         public async Task CheckFileAsync(string remoteFilePath)
         {
-            await ExecuteWithHandling(async() =>
+            await ExecuteWithHandlingAsync(async() =>
             {
                 var fileExists = await _client.ExistsAsync(remoteFilePath);
                 if (!fileExists)
                     throw new InvalidOperationException(string.Format(FILE_DOES_NOT_EXIST_ERROR, remoteFilePath));
 
                 return Task.CompletedTask;
-            });
+            }); 
         }
     }
 }

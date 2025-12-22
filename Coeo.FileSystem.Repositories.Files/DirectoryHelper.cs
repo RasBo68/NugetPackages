@@ -11,8 +11,8 @@
         {
             await ExecuteWithHandling(async() =>
             {
-                var fileExists = Directory.Exists(directory);
-                if (!fileExists) // no asynchronous version available, cause operation is fast
+                var fileExists = Directory.Exists(directory); // no asynchronous version available, cause operation is fast
+                if (!fileExists) 
                     throw new InvalidOperationException(string.Format(DIRECTORY_DOES_NOT_EXIST_ERROR, directory));
                 return Task.CompletedTask;
             });
