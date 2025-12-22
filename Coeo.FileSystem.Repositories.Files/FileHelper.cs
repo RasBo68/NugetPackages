@@ -7,13 +7,13 @@ namespace Coeo.FileSystem.Repositories.Files
         public async Task CheckFileAsync(string filePath)
         {
             // This method does not require a bool return value, as its purpose is to validate the existence of the file with exception hanndling
-            await ExecuteWithHandling(async () =>
+            await ExecuteWithHandling(async() =>
             {
                 var fileExists = File.Exists(filePath);
                 if (!fileExists)
                     throw new InvalidOperationException(string.Format(FILE_DOES_NOT_EXIST_ERROR, filePath));
 
-                return await Task.FromResult(fileExists);
+                return Task.CompletedTask;
             });
         }
     }
