@@ -63,13 +63,13 @@ namespace Coeo.FileSystem.Repositories.Files
         {
             _pathHelper.CheckPathString(filePath);
             await _fileHelper.CheckFileAsync(filePath);
-            await File.WriteAllTextAsync(filePath, contentString, Encoding.UTF8);
+            await File.WriteAllTextAsync(filePath, contentString, Encoding.GetEncoding("ISO-8859-1"));
         }
         public async Task<string> DownloadFileAsync(string filePath)
         {
             _pathHelper.CheckPathString(filePath);
             await _fileHelper.CheckFileAsync(filePath);
-            return await File.ReadAllTextAsync(filePath, Encoding.UTF8);
+            return await File.ReadAllTextAsync(filePath, Encoding.GetEncoding("ISO-8859-1"));
         }
         public Task DeleteFileAsync(string filePath)
         {

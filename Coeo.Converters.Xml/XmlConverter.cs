@@ -1,4 +1,5 @@
 ﻿using Coeo.Converters.Xml.Extensions;
+using System.IO;
 using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
@@ -11,52 +12,33 @@ namespace Coeo.Converters.Xml
         private const string NEW_LINE_CHARS = "\n";
 
 
-        public async Task<TLoadObject> ConvertXmlString2Object<TLoadObject>(string filePath)
+        public TLoadObject ConvertXmlContentString2Object<TLoadObject>(string xmlContentString)
         {
-            filePath.CheckFilePathString();
-
-            return await Task.Run(() =>
-            {
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(TLoadObject));
-                using (StreamReader streamReader = new StreamReader(filePath))
-                {
-                    return (TLoadObject)xmlSerializer.Deserialize(streamReader)! ?? Activator.CreateInstance<TLoadObject>();
-                }
-            });
+            using MemoryStream stream = new MemoryStream(Encoding.GetEncoding("ISO-8859-1").GetBytes(xmlContentString));
+            var serializer = new XmlSerializer(typeof(TLoadObject));
+            TLoadObject? val = (TLoadObject?)serializer.Deserialize(stream);
+            return (val != null) ? val : Activator.CreateInstance<TLoadObject>();
         }
-        public async Task<string> ConvertObject2XmlString<TSaveObject>(string filePath, TSaveObject tSaveObject)
+        public string ConvertObject2XmlContentString<TSaveObject>(TSaveObject tSaveObject)
         {
-            filePath.CheckFilePathString();
-
-            string xmlContent = string.Empty;
-
-            await Task.Run(() =>
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(TSaveObject));
+            XmlSerializerNamespaces xmlSerializerNamespaces = new XmlSerializerNamespaces();
+            xmlSerializerNamespaces.Add(string.Empty, string.Empty);
+            XmlWriterSettings xmlWriterSettings = new XmlWriterSettings
             {
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(TSaveObject));
-                XmlSerializerNamespaces xmlSerializerNamespaces = new XmlSerializerNamespaces();
-                xmlSerializerNamespaces.Add(string.Empty, string.Empty); 
-                XmlWriterSettings xmlWriterSettings = new XmlWriterSettings
-                {
-                    Indent = true,
-                    IndentChars = IDENT_CHARS,  
-                    NewLineChars = NEW_LINE_CHARS,  
-                    NewLineHandling = NewLineHandling.Replace,
-                    OmitXmlDeclaration = true, 
-                };
+                Indent = true,
+                IndentChars = IDENT_CHARS,
+                NewLineChars = NEW_LINE_CHARS,
+                NewLineHandling = NewLineHandling.Replace,
+                OmitXmlDeclaration = true,
+            };
 
-                StringBuilder stringBuilder = new StringBuilder();
-                using (StringWriter stringWriter = new StringWriter(stringBuilder))
-                {
-                    using (XmlWriter xmlWriter = XmlWriter.Create(stringWriter, xmlWriterSettings))
-                    {
-                        xmlSerializer.Serialize(xmlWriter, tSaveObject, xmlSerializerNamespaces);
-                    }
-                }
+            StringBuilder stringBuilder = new StringBuilder();
+            using StringWriter stringWriter = new StringWriter(stringBuilder);
+            using XmlWriter xmlWriter = XmlWriter.Create(stringWriter, xmlWriterSettings);
+            xmlSerializer.Serialize(xmlWriter, tSaveObject, xmlSerializerNamespaces);
 
-                string xmlContent = stringBuilder.ToString();
-            });
-
-            return xmlContent;
+            return stringBuilder.ToString();
         }
     }
 }
