@@ -1,14 +1,20 @@
-﻿namespace Coeo.FileSystem.Repositories.Files
-{
-    public class FileHelper : FileHelperBase, IFileHelper
-    {
-        public Task CheckFileAsync(string filePath)
-        {
-            var fileExists = File.Exists(filePath);
-            if (!fileExists)
-                throw new InvalidOperationException(string.Format(FILE_DOES_NOT_EXIST_ERROR, filePath));
+﻿using Org.BouncyCastle.Asn1;
 
-            return Task.CompletedTask;
+namespace Coeo.FileSystem.Repositories.Files
+{
+    public class FileHelper : FileRepositoryBase, IFileHelper
+    {
+        public async Task CheckFileAsync(string filePath)
+        {
+            // This method does not require a bool return value, as its purpose is to validate the existence of the file with exception hanndling
+            await ExecuteWithHandling(async () =>
+            {
+                var fileExists = File.Exists(filePath);
+                if (!fileExists)
+                    throw new InvalidOperationException(string.Format(FILE_DOES_NOT_EXIST_ERROR, filePath));
+
+                return await Task.FromResult(fileExists);
+            });
         }
     }
 }

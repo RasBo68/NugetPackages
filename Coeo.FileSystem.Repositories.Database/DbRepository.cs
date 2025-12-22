@@ -1,6 +1,7 @@
 ﻿
 using Coeo.FileSystem.Repositories.Database.Exceptions;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace Coeo.FileSystem.Repositories.Database
 {
@@ -33,18 +34,18 @@ namespace Coeo.FileSystem.Repositories.Database
             _dbSet = _context.Set<TEntity>();
         }
 
-        public IQueryable<TEntity> ReadAll()
+        public async Task<IQueryable<TEntity>> ReadAll()
         {
-            return ExecuteWithHandling(() =>
+            return await ExecuteWithHandling(async () =>
             {
-                return _dbSet.AsNoTracking();
+                return await Task.FromResult(_dbSet.AsNoTracking()); // pretends asynchronous behavior
             });
         }
-        public IQueryable<TEntity> GetAll()
+        public async Task<IQueryable<TEntity>> GetAll()
         {
-            return ExecuteWithHandling(() =>
+            return await ExecuteWithHandling(async () =>
             {
-                return _dbSet;
+                return await Task.FromResult(_dbSet); // pretends asynchronous behavior
             });
         }
         public virtual async Task<TEntity?> GetByIdAsync(int id)
@@ -52,14 +53,14 @@ namespace Coeo.FileSystem.Repositories.Database
             if (id < 1)
                 throw new ArgumentOutOfRangeException(string.Format(ARGUMENT_OUT_OF_RANGE_EXCEPTION, READ, id.ToString()));
 
-            return await ExecuteWithHandlingAsync(async () =>
+            return await ExecuteWithHandling(async () =>
             {
                 return await _dbSet.FindAsync(id);
             }, id);
         }
         public async Task AddAsync(TEntity entity)
         {
-            await ExecuteWithHandlingAsync(async () =>
+            await ExecuteWithHandling(async () =>
             {
                 await _dbSet.AddAsync(entity);
                 await _context.SaveChangesAsync();
@@ -70,7 +71,7 @@ namespace Coeo.FileSystem.Repositories.Database
         {
             if (!entities.Any()) return;
 
-            await ExecuteWithHandlingAsync(async () =>
+            await ExecuteWithHandling(async () =>
             {
                 await _dbSet.AddRangeAsync(entities);
                 await _context.SaveChangesAsync();
@@ -79,7 +80,7 @@ namespace Coeo.FileSystem.Repositories.Database
         }
         public virtual async Task UpdateAsync(TEntity entity)
         {
-            await ExecuteWithHandlingAsync(async () =>
+            await ExecuteWithHandling(async () =>
             {
                 _dbSet.Update(entity);
                 await _context.SaveChangesAsync();
@@ -90,7 +91,7 @@ namespace Coeo.FileSystem.Repositories.Database
         {
             if (!entities.Any()) return;
 
-            await ExecuteWithHandlingAsync(async () =>
+            await ExecuteWithHandling(async () =>
             {
                 _dbSet.UpdateRange(entities);
                 await _context.SaveChangesAsync();
@@ -102,7 +103,7 @@ namespace Coeo.FileSystem.Repositories.Database
             if (id < 1)
                 throw new ArgumentOutOfRangeException(string.Format(ARGUMENT_OUT_OF_RANGE_EXCEPTION, DELETE, id.ToString()));
 
-            await ExecuteWithHandlingAsync(async () =>
+            await ExecuteWithHandling(async () =>
             {
                 var entity = await GetByIdAsync(id);
                 if (entity != null)
@@ -117,7 +118,7 @@ namespace Coeo.FileSystem.Repositories.Database
         {
             if (!entities.Any()) return;
 
-            await ExecuteWithHandlingAsync(async () =>
+            await ExecuteWithHandling(async () =>
             {
                 _dbSet.RemoveRange(entities);
                 await _context.SaveChangesAsync();
@@ -125,8 +126,7 @@ namespace Coeo.FileSystem.Repositories.Database
             }, entities);
         }
 
-
-        private async Task<Tout> ExecuteWithHandlingAsync<TIn, Tout>(Func<Task<Tout>> action, TIn? entity = default)
+        private async Task<TOut> ExecuteWithHandling<TOut>(Func<Task<TOut>> action, object? entity = default)
         {
             try
             {
@@ -138,26 +138,12 @@ namespace Coeo.FileSystem.Repositories.Database
             }
             catch (Exception ex)
             {
-                if(entity == null)
+                if (entity == null)
                     throw new DatabaseException(DATABASE_ERROR_MESSAGE, ex.InnerException!);
                 else
-                    throw new DatabaseException<TIn>(DATABASE_ERROR_MESSAGE, ex.InnerException!, entity);
+                    throw new DatabaseException(DATABASE_ERROR_MESSAGE, ex.InnerException!, entity);
             }
         }
-        private Tout ExecuteWithHandling<Tout>(Func<Tout> action)
-        {
-            try
-            {
-                return action();
-            }
-            catch (Exception ex) when (ex is NullReferenceException || ex is ArgumentNullException || ex is NotSupportedException || ex is InvalidCastException)
-            {
-                throw;
-            }
-            catch (Exception ex)
-            {
-                throw new DatabaseException(DATABASE_ERROR_MESSAGE, ex.InnerException!);
-            }
-        }
+
     }
 }

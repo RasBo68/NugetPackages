@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	  <PackageId>Coeo.FileSystem.Repositories.Files</PackageId>
-	  <Version>1.0.8</Version>
+	  <Version>1.0.11</Version>
 	  <Authors>Rasit Boztoprak</Authors>
 	  <Description>Abstraction layer for file operations</Description>
 	  <PackageTags>filesystem, file, sftp, nuget</PackageTags>

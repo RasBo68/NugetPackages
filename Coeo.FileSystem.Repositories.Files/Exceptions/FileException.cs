@@ -1,21 +1,20 @@
 ﻿namespace Coeo.FileSystem.Repositories.Database.Exceptions
 {
-    public class DatabaseException : Exception
+    public class FileException : Exception
     {
         public object? AdditionalInformation;
-
-        public DatabaseException(): base()
+        public FileException(): base()
         {
         }
-        public DatabaseException(string message)
+        public FileException(string message)
             : base(message)
         {
         }
-        public DatabaseException(string message, Exception innerException)
+        public FileException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
-        public DatabaseException(string message, Exception innerException, object additionalInformation)
+        public FileException(string message, Exception innerException, object additionalInformation)
             : base(message, innerException)
         {
             AdditionalInformation = additionalInformation;

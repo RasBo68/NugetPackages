@@ -14,5 +14,11 @@ namespace Coeo.FileSystem.Repositories.Files.Extensions
             if (!sftpClient.IsConnected)
                 throw new InvalidOperationException(SFTP_CONNECTION_ERROR);
         }
+
+        internal static void DisconnectSftpClient(this SftpClient sftpClient)
+        {
+            if (sftpClient.IsConnected)
+                sftpClient.Disconnect();
+        }
     }
 }

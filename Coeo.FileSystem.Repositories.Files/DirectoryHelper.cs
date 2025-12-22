@@ -15,13 +15,14 @@
 
             return Task.CompletedTask;
         }
-        public void CreateDirectoryAsync(string directory)
+        public Task CreateDirectoryAsync(string directory)
         {
             _pathHelper.CheckPathString(directory);
             var dirName = _pathHelper.GetDirectoryName(directory);
             var dirPath = _pathHelper.GetFileNameWithoutExtension(directory);
             directory = _pathHelper.CombinePaths(dirName, dirPath);
             Directory.CreateDirectory(directory); // no asynchronous version available, cause operation is fast
+            return Task.CompletedTask;
         }
     }
 }

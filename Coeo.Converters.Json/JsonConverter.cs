@@ -1,7 +1,6 @@
-﻿
-using System.Text.Json;
+﻿using System.Text.Json;
 
-namespace Coeo.Extensions.JsonHelper
+namespace Coeo.Converters.Json
 {
     public class JsonConverter : IJsonConverter
     {
@@ -9,12 +8,12 @@ namespace Coeo.Extensions.JsonHelper
         private const string DESERIALIZING_ERROR = "Error during JSON deserialization.";
         private const string DESERIALIZING_NULL_ERROR = "Deserialization resulted in null.";
 
-        public string Convert2JsonString(object entity)
+        public string ConvertObject2JsonString(object entity)
         {
             return JsonSerializer.Serialize(entity);
         }
 
-        public T Convert2Entity<T>(string jsonString)
+        public T ConvertJsonString2Object<T>(string jsonString)
         {
             if (string.IsNullOrEmpty(jsonString) || string.IsNullOrWhiteSpace(jsonString))
                 throw new InvalidOperationException(JSON_STRING_EMPTY_OR_WHITESPACE);

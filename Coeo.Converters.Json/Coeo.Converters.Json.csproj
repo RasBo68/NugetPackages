@@ -4,11 +4,11 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-	  <PackageId>Coeo.Extensions.JsonHelper</PackageId>
-	  <Version>1.0.4</Version>
+	  <PackageId>Coeo.Converters.Json</PackageId>
+	  <Version>1.0.0</Version>
 	  <Authors>Rasit Boztoprak</Authors>
-	  <Description>Abstraction layer for json methods</Description>
-	  <PackageTags>json helper client, nuget</PackageTags>
+	  <Description>Abstraction layer for json conversion methods</Description>
+	  <PackageTags>json, conversion, nuget</PackageTags>
 	  <RepositoryUrl>-</RepositoryUrl>
   </PropertyGroup>
 
