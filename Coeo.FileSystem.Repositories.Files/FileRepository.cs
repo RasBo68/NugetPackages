@@ -32,7 +32,6 @@ namespace Coeo.FileSystem.Repositories.Files
             await ExecuteWithHandling(async () =>
             {
                 _pathHelper.CheckPathString(filePath);
-                await _fileHelper.CheckFileAsync(filePath);
                 await File.WriteAllTextAsync(filePath, contentString, Encoding.GetEncoding("ISO-8859-1"));
             });
         }
