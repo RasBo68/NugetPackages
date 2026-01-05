@@ -19,18 +19,28 @@ namespace Coeo.Converters.Xml
             TLoadObject? val = (TLoadObject?)serializer.Deserialize(stream);
             return (val != null) ? val : Activator.CreateInstance<TLoadObject>();
         }
-        public string ConvertObjectToXmlString<TSaveObject>(TSaveObject tSaveObject)
+        public string ConvertObjectToXmlString<TSaveObject>(TSaveObject tSaveObject, Dictionary<string, string>? xmlNamespaces = null, bool setXmlDeclaration = false)
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(TSaveObject));
             XmlSerializerNamespaces xmlSerializerNamespaces = new XmlSerializerNamespaces();
-            xmlSerializerNamespaces.Add(string.Empty, string.Empty);
+
+            if (xmlNamespaces == null)
+                xmlSerializerNamespaces.Add(string.Empty, string.Empty);
+            else
+            {
+                foreach (var xmlNamespace in xmlNamespaces)
+                {
+                    xmlSerializerNamespaces.Add(xmlNamespace.Key, xmlNamespace.Value);
+                }
+            }
+
             XmlWriterSettings xmlWriterSettings = new XmlWriterSettings
             {
                 Indent = true,
                 IndentChars = IDENT_CHARS,
                 NewLineChars = NEW_LINE_CHARS,
                 NewLineHandling = NewLineHandling.Replace,
-                OmitXmlDeclaration = true,
+                OmitXmlDeclaration = !setXmlDeclaration,
             };
 
             StringBuilder stringBuilder = new StringBuilder();
