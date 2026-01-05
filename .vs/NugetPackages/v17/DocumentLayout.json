@@ -7,20 +7,20 @@
       "RelativeMoniker": "D:0:0:{BE9929C5-B3F3-4274-92B0-D62373B0C4F5}|Coeo.FileSystem.Repositories.Files\\Coeo.FileSystem.Repositories.Files.csproj|solutionrelative:coeo.filesystem.repositories.files\\coeo.filesystem.repositories.files.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BE9929C5-B3F3-4274-92B0-D62373B0C4F5}|Coeo.FileSystem.Repositories.Files\\Coeo.FileSystem.Repositories.Files.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\coeo.filesystem.repositories.files\\filerepositorysftp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BE9929C5-B3F3-4274-92B0-D62373B0C4F5}|Coeo.FileSystem.Repositories.Files\\Coeo.FileSystem.Repositories.Files.csproj|solutionrelative:coeo.filesystem.repositories.files\\filerepositorysftp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BE9929C5-B3F3-4274-92B0-D62373B0C4F5}|Coeo.FileSystem.Repositories.Files\\Coeo.FileSystem.Repositories.Files.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\coeo.filesystem.repositories.files\\filerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BE9929C5-B3F3-4274-92B0-D62373B0C4F5}|Coeo.FileSystem.Repositories.Files\\Coeo.FileSystem.Repositories.Files.csproj|solutionrelative:coeo.filesystem.repositories.files\\filerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BE9929C5-B3F3-4274-92B0-D62373B0C4F5}|Coeo.FileSystem.Repositories.Files\\Coeo.FileSystem.Repositories.Files.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\coeo.filesystem.repositories.files\\filerepositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BE9929C5-B3F3-4274-92B0-D62373B0C4F5}|Coeo.FileSystem.Repositories.Files\\Coeo.FileSystem.Repositories.Files.csproj|solutionrelative:coeo.filesystem.repositories.files\\filerepositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BE9929C5-B3F3-4274-92B0-D62373B0C4F5}|Coeo.FileSystem.Repositories.Files\\Coeo.FileSystem.Repositories.Files.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\coeo.filesystem.repositories.files\\filehelpersftp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BE9929C5-B3F3-4274-92B0-D62373B0C4F5}|Coeo.FileSystem.Repositories.Files\\Coeo.FileSystem.Repositories.Files.csproj|solutionrelative:coeo.filesystem.repositories.files\\filehelpersftp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE9929C5-B3F3-4274-92B0-D62373B0C4F5}|Coeo.FileSystem.Repositories.Files\\Coeo.FileSystem.Repositories.Files.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\coeo.filesystem.repositories.files\\filerepositorysftp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE9929C5-B3F3-4274-92B0-D62373B0C4F5}|Coeo.FileSystem.Repositories.Files\\Coeo.FileSystem.Repositories.Files.csproj|solutionrelative:coeo.filesystem.repositories.files\\filerepositorysftp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE9929C5-B3F3-4274-92B0-D62373B0C4F5}|Coeo.FileSystem.Repositories.Files\\Coeo.FileSystem.Repositories.Files.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\coeo.filesystem.repositories.files\\filerepositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE9929C5-B3F3-4274-92B0-D62373B0C4F5}|Coeo.FileSystem.Repositories.Files\\Coeo.FileSystem.Repositories.Files.csproj|solutionrelative:coeo.filesystem.repositories.files\\filerepositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,25 +46,25 @@
               "RelativeToolTip": "Coeo.FileSystem.Repositories.Files\\Coeo.FileSystem.Repositories.Files.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-01-05T09:39:41.242Z",
+              "WhenOpened": "2026-01-05T10:50:38.677Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "FileRepositorySftp.cs",
               "DocumentMoniker": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\Coeo.FileSystem.Repositories.Files\\FileRepositorySftp.cs",
               "RelativeDocumentMoniker": "Coeo.FileSystem.Repositories.Files\\FileRepositorySftp.cs",
               "ToolTip": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\Coeo.FileSystem.Repositories.Files\\FileRepositorySftp.cs",
               "RelativeToolTip": "Coeo.FileSystem.Repositories.Files\\FileRepositorySftp.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAADwvzkAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAADwvzUAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-05T09:38:50.498Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "FileHelperSftp.cs",
               "DocumentMoniker": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\Coeo.FileSystem.Repositories.Files\\FileHelperSftp.cs",
               "RelativeDocumentMoniker": "Coeo.FileSystem.Repositories.Files\\FileHelperSftp.cs",
@@ -72,24 +72,25 @@
               "RelativeToolTip": "Coeo.FileSystem.Repositories.Files\\FileHelperSftp.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-05T07:50:14.169Z"
+              "WhenOpened": "2026-01-05T07:50:14.169Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "FileRepository.cs",
               "DocumentMoniker": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\Coeo.FileSystem.Repositories.Files\\FileRepository.cs",
               "RelativeDocumentMoniker": "Coeo.FileSystem.Repositories.Files\\FileRepository.cs",
               "ToolTip": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\Coeo.FileSystem.Repositories.Files\\FileRepository.cs",
               "RelativeToolTip": "Coeo.FileSystem.Repositories.Files\\FileRepository.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAADwvyEAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAADwvyIAAABhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-05T07:46:20.72Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "FileRepositoryBase.cs",
               "DocumentMoniker": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\Coeo.FileSystem.Repositories.Files\\FileRepositoryBase.cs",
               "RelativeDocumentMoniker": "Coeo.FileSystem.Repositories.Files\\FileRepositoryBase.cs",
@@ -97,7 +98,8 @@
               "RelativeToolTip": "Coeo.FileSystem.Repositories.Files\\FileRepositoryBase.cs",
               "ViewState": "AgIAAB8AAAAAAAAAAAAswDQAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-24T07:41:50.947Z"
+              "WhenOpened": "2025-12-24T07:41:50.947Z",
+              "EditorCaption": ""
             }
           ]
         }

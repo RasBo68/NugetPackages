@@ -50,7 +50,9 @@ namespace Coeo.FileSystem.Repositories.Files
             await ExecuteWithHandling(async () =>
             {
                 _pathHelper.CheckPathString(remoteFilePath);
-                var contentBytes = Encoding.GetEncoding("ISO-8859-1").GetBytes(contentString); // convert string to byte array
+                // convert string to byte array
+                // SFTP servers often use ISO-8859-1 encoding, which is due to the Linux system.
+                var contentBytes = Encoding.GetEncoding("ISO-8859-1").GetBytes(contentString); 
                 using var ms = new MemoryStream(contentBytes);  // create memory stream in ram memory from byte array
                 await _client.UploadFileAsync(ms, remoteFilePath);
                 return Task.CompletedTask;
@@ -66,7 +68,9 @@ namespace Coeo.FileSystem.Repositories.Files
                 using var ms = new MemoryStream(); // Buffer in ram memory, which behaves like a file
                 await _client.DownloadFileAsync(remoteFilePath, ms); // download file from sftp to memory stream
                 ms.Position = 0;    // after download the cursor of memory stream is at the end, set position to 0 to read from the beginning
-                using var sr = new StreamReader(ms, Encoding.GetEncoding("ISO-8859-1"));    // stream reader to read from memory stream
+                // stream reader to read from memory stream
+                // SFTP servers often use ISO-8859-1 encoding, which is due to the Linux system.
+                using var sr = new StreamReader(ms, Encoding.GetEncoding("ISO-8859-1"));   
                 var contentString = sr.ReadToEnd();     // conversion bytes 2 string
                 return contentString;
             });

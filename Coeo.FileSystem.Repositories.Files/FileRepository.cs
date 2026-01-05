@@ -32,7 +32,8 @@ namespace Coeo.FileSystem.Repositories.Files
             await ExecuteWithHandling(async () =>
             {
                 _pathHelper.CheckPathString(filePath);
-                await File.WriteAllTextAsync(filePath, contentString, Encoding.GetEncoding("ISO-8859-1"));
+                // In the windows file system, the default encoding is UTF-16 LE (Little Endian).
+                await File.WriteAllTextAsync(filePath, contentString);
             });
         }
         public async Task<string> DownloadFileAsync(string filePath)
@@ -41,7 +42,8 @@ namespace Coeo.FileSystem.Repositories.Files
             {
                 _pathHelper.CheckPathString(filePath);
                 await _fileHelper.CheckFileAsync(filePath);
-                return await File.ReadAllTextAsync(filePath, Encoding.GetEncoding("ISO-8859-1"));
+                // In the windows file system, the default encoding is UTF-16 LE (Little Endian).
+                return await File.ReadAllTextAsync(filePath);
             });
         }
         public async Task DeleteFileAsync(string filePath)
