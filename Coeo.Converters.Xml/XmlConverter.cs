@@ -12,14 +12,14 @@ namespace Coeo.Converters.Xml
         private const string NEW_LINE_CHARS = "\n";
 
 
-        public TLoadObject ConvertXmlContentString2Object<TLoadObject>(string xmlContentString)
+        public TLoadObject ConvertXmlStringToObject<TLoadObject>(string xmlContentString)
         {
             using MemoryStream stream = new MemoryStream(Encoding.GetEncoding("ISO-8859-1").GetBytes(xmlContentString));
             var serializer = new XmlSerializer(typeof(TLoadObject));
             TLoadObject? val = (TLoadObject?)serializer.Deserialize(stream);
             return (val != null) ? val : Activator.CreateInstance<TLoadObject>();
         }
-        public string ConvertObject2XmlContentString<TSaveObject>(TSaveObject tSaveObject)
+        public string ConvertObjectToXmlString<TSaveObject>(TSaveObject tSaveObject)
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(TSaveObject));
             XmlSerializerNamespaces xmlSerializerNamespaces = new XmlSerializerNamespaces();

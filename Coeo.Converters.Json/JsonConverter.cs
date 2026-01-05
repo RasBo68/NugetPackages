@@ -8,12 +8,12 @@ namespace Coeo.Converters.Json
         private const string DESERIALIZING_ERROR = "Error during JSON deserialization.";
         private const string DESERIALIZING_NULL_ERROR = "Deserialization resulted in null.";
 
-        public string ConvertObject2JsonString(object entity)
+        public string ConvertObjectToJsonString(object entity)
         {
             return JsonSerializer.Serialize(entity);
         }
 
-        public T ConvertJsonString2Object<T>(string jsonString)
+        public T ConvertJsonStringToObject<T>(string jsonString)
         {
             if (string.IsNullOrEmpty(jsonString) || string.IsNullOrWhiteSpace(jsonString))
                 throw new InvalidOperationException(JSON_STRING_EMPTY_OR_WHITESPACE);

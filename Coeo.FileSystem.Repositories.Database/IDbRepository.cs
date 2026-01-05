@@ -6,9 +6,9 @@
         Task AddRangeAsync(IEnumerable<TEntity> entities);
         Task DeleteAsync(int id);
         Task DeleteRangeAsync(IEnumerable<TEntity> entities);
-        Task<IQueryable<TEntity>> GetAll();
+        IQueryable<TEntity> GetAll();
         Task<TEntity?> GetByIdAsync(int id);
-        Task<IQueryable<TEntity>> ReadAll();
+        IQueryable<TEntity> ReadAll();
         Task UpdateAsync(TEntity entity);
         Task UpdateRangeAsync(IEnumerable<TEntity> entities);
     }

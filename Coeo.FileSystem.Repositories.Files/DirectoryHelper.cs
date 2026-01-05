@@ -9,7 +9,7 @@
         }
         public async Task CheckDirectoryAsync(string directory)
         {
-            await ExecuteWithHandling(async() =>
+            await ExecuteWithHandling(() =>
             {
                 var fileExists = Directory.Exists(directory); // no asynchronous version available, cause operation is fast
                 if (!fileExists) 
@@ -19,7 +19,7 @@
         }
         public async Task CreateDirectoryAsync(string directory)
         {
-            await ExecuteWithHandling(async() =>
+            await ExecuteWithHandling(() =>
             {
                 _pathHelper.CheckPathString(directory);
                 var dirName = _pathHelper.GetDirectoryName(directory);

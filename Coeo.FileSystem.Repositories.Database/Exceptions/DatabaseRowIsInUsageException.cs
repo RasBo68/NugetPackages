@@ -1,21 +1,21 @@
 ﻿namespace Coeo.FileSystem.Repositories.Database.Exceptions
 {
-    public class DatabaseException : Exception
+    public class DatabaseRowIsInUsageException : Exception
     {
         public object? AdditionalInformation { get; set; }
 
-        public DatabaseException() : base()
+        public DatabaseRowIsInUsageException() : base()
         {
         }
-        public DatabaseException(string message)
+        public DatabaseRowIsInUsageException(string message)
             : base(message)
         {
         }
-        public DatabaseException(string message, Exception innerException)
+        public DatabaseRowIsInUsageException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
-        public DatabaseException(string message, Exception innerException, object additionalInformation)
+        public DatabaseRowIsInUsageException(string message, Exception innerException, object additionalInformation)
             : base(message, innerException)
         {
             AdditionalInformation = additionalInformation;

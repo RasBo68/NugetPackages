@@ -34,7 +34,6 @@ namespace Coeo.FileSystem.Repositories.Files
                 _pathHelper.CheckPathString(filePath);
                 await _fileHelper.CheckFileAsync(filePath);
                 await File.WriteAllTextAsync(filePath, contentString, Encoding.GetEncoding("ISO-8859-1"));
-                return Task.CompletedTask;
             });
         }
         public async Task<string> DownloadFileAsync(string filePath)
@@ -53,7 +52,6 @@ namespace Coeo.FileSystem.Repositories.Files
                 _pathHelper.CheckPathString(filePath);
                 await _fileHelper.CheckFileAsync(filePath);
                 File.Delete(filePath); // no asynchronous version available, cause operation is fast
-                return Task.CompletedTask;
             });
         }
         public void Dispose()

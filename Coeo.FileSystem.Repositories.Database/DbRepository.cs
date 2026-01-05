@@ -34,18 +34,18 @@ namespace Coeo.FileSystem.Repositories.Database
             _dbSet = _context.Set<TEntity>();
         }
 
-        public async Task<IQueryable<TEntity>> ReadAll()
+        public IQueryable<TEntity> ReadAll()
         {
-            return await ExecuteWithHandling(async () =>
+            return ExecuteWithHandling(() =>
             {
-                return await Task.FromResult(_dbSet.AsNoTracking()); // pretends asynchronous behavior
+                return _dbSet.AsNoTracking();
             });
         }
-        public async Task<IQueryable<TEntity>> GetAll()
+        public IQueryable<TEntity> GetAll()
         {
-            return await ExecuteWithHandling(async () =>
+            return ExecuteWithHandling(() =>
             {
-                return await Task.FromResult(_dbSet); // pretends asynchronous behavior
+                return _dbSet;
             });
         }
         public virtual async Task<TEntity?> GetByIdAsync(int id)
@@ -53,14 +53,14 @@ namespace Coeo.FileSystem.Repositories.Database
             if (id < 1)
                 throw new ArgumentOutOfRangeException(string.Format(ARGUMENT_OUT_OF_RANGE_EXCEPTION, READ, id.ToString()));
 
-            return await ExecuteWithHandling(async () =>
+            return await ExecuteWithHandlingAsync(async () =>
             {
                 return await _dbSet.FindAsync(id);
             }, id);
         }
         public async Task AddAsync(TEntity entity)
         {
-            await ExecuteWithHandling(async () =>
+            await ExecuteWithHandlingAsync(async () =>
             {
                 await _dbSet.AddAsync(entity);
                 await _context.SaveChangesAsync();
@@ -71,7 +71,7 @@ namespace Coeo.FileSystem.Repositories.Database
         {
             if (!entities.Any()) return;
 
-            await ExecuteWithHandling(async () =>
+            await ExecuteWithHandlingAsync(async () =>
             {
                 await _dbSet.AddRangeAsync(entities);
                 await _context.SaveChangesAsync();
@@ -80,7 +80,7 @@ namespace Coeo.FileSystem.Repositories.Database
         }
         public virtual async Task UpdateAsync(TEntity entity)
         {
-            await ExecuteWithHandling(async () =>
+            await ExecuteWithHandlingAsync(async () =>
             {
                 _dbSet.Update(entity);
                 await _context.SaveChangesAsync();
@@ -91,7 +91,7 @@ namespace Coeo.FileSystem.Repositories.Database
         {
             if (!entities.Any()) return;
 
-            await ExecuteWithHandling(async () =>
+            await ExecuteWithHandlingAsync(async () =>
             {
                 _dbSet.UpdateRange(entities);
                 await _context.SaveChangesAsync();
@@ -103,7 +103,7 @@ namespace Coeo.FileSystem.Repositories.Database
             if (id < 1)
                 throw new ArgumentOutOfRangeException(string.Format(ARGUMENT_OUT_OF_RANGE_EXCEPTION, DELETE, id.ToString()));
 
-            await ExecuteWithHandling(async () =>
+            await ExecuteWithHandlingAsync(async () =>
             {
                 var entity = await GetByIdAsync(id);
                 if (entity != null)
@@ -118,7 +118,7 @@ namespace Coeo.FileSystem.Repositories.Database
         {
             if (!entities.Any()) return;
 
-            await ExecuteWithHandling(async () =>
+            await ExecuteWithHandlingAsync(async () =>
             {
                 _dbSet.RemoveRange(entities);
                 await _context.SaveChangesAsync();
@@ -126,7 +126,7 @@ namespace Coeo.FileSystem.Repositories.Database
             }, entities);
         }
 
-        private async Task<TOut> ExecuteWithHandling<TOut>(Func<Task<TOut>> action, object? entity = default)
+        private async Task<TOut> ExecuteWithHandlingAsync<TOut>(Func<Task<TOut>> action, object? entity = default)
         {
             try
             {
@@ -136,12 +136,45 @@ namespace Coeo.FileSystem.Repositories.Database
             {
                 throw;
             }
+            // Concurrency exception handling: e.g., when a row is being used by another process, by exception while using addrange whole operation fails
+            catch (DbUpdateConcurrencyException ex)
+            {
+                if (entity == null)
+                    throw new DatabaseRowIsInUsageException(DATABASE_ERROR_MESSAGE, ex);
+                else
+                    throw new DatabaseRowIsInUsageException(DATABASE_ERROR_MESSAGE, ex, entity);
+            }
+            catch (Exception ex) // by exception while using addrange whole operation fails
+            {
+                if (entity == null)
+                    throw new DatabaseException(DATABASE_ERROR_MESSAGE, ex);
+                else
+                    throw new DatabaseException(DATABASE_ERROR_MESSAGE, ex, entity);
+            }
+        }
+        private TOut ExecuteWithHandling<TOut>(Func<TOut> action, object? entity = default)
+        {
+            try
+            {
+                return action();
+            }
+            catch (Exception ex) when (ex is NullReferenceException || ex is ArgumentNullException || ex is NotSupportedException || ex is InvalidCastException)
+            {
+                throw;
+            }
+            catch (DbUpdateConcurrencyException ex)
+            {
+                if (entity == null)
+                    throw new DatabaseRowIsInUsageException(DATABASE_ERROR_MESSAGE, ex);
+                else
+                    throw new DatabaseRowIsInUsageException(DATABASE_ERROR_MESSAGE, ex, entity);
+            }
             catch (Exception ex)
             {
                 if (entity == null)
-                    throw new DatabaseException(DATABASE_ERROR_MESSAGE, ex.InnerException!);
+                    throw new DatabaseException(DATABASE_ERROR_MESSAGE, ex);
                 else
-                    throw new DatabaseException(DATABASE_ERROR_MESSAGE, ex.InnerException!, entity);
+                    throw new DatabaseException(DATABASE_ERROR_MESSAGE, ex, entity);
             }
         }
 
