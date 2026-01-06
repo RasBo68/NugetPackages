@@ -11,22 +11,19 @@ namespace Coeo.Extensions.RestApiClient
         private const string HTTP_REQUEST_EXCEPTION_MESSAGE = "Http request failed! Detailed Informations:\nStatusCode: {0} \nHeaders: {1}\nContent: {2}" +
             "\nRequestMessage: {3}\nReasonPhrase: {4}\nVersion: {5}\nTrailingHeaders: {6}";
 
-        public async Task<HttpResponseMessage> RequestPost(string apiUrl, object sendObject, List<HttpRequestHeaderSimplified>? httpRequestHeaders = null)
+        public async Task<HttpResponseMessage> RequestPost(string apiUrl, object sendObject, CancellationToken? cancellationToken = null, List<HttpRequestHeaderSimplified>? httpRequestHeaders = null)
         {
-            return await RequestInternal(apiUrl, RequestType.post, httpRequestHeaders, sendObject);
+            return await RequestInternal(apiUrl, RequestType.post, cancellationToken, httpRequestHeaders, sendObject);
         }
-
-        public async Task<HttpResponseMessage> RequestPut(string apiUrl, object sendObject, List<HttpRequestHeaderSimplified>? httpRequestHeaders = null)
+        public async Task<HttpResponseMessage> RequestPut(string apiUrl, object sendObject, CancellationToken? cancellationToken = null, List<HttpRequestHeaderSimplified>? httpRequestHeaders = null)
         {
-            return await RequestInternal(apiUrl, RequestType.put, httpRequestHeaders, sendObject);
+            return await RequestInternal(apiUrl, RequestType.put, cancellationToken, httpRequestHeaders, sendObject);
         }
-
-        public async Task<HttpResponseMessage> RequestGet(string apiUrl, List<HttpRequestHeaderSimplified>? httpRequestHeaders = null)
+        public async Task<HttpResponseMessage> RequestGet(string apiUrl, CancellationToken? cancellationToken = null, List<HttpRequestHeaderSimplified>? httpRequestHeaders = null)
         {
-            return await RequestInternal(apiUrl, RequestType.get, httpRequestHeaders);
+            return await RequestInternal(apiUrl, RequestType.get, cancellationToken, httpRequestHeaders);
         }
-
-        private async Task<HttpResponseMessage> RequestInternal(string apiUrl, RequestType requestType, List<HttpRequestHeaderSimplified>? httpRequestHeaders = null, object ? sendObject=null)
+        private async Task<HttpResponseMessage> RequestInternal(string apiUrl, RequestType requestType, CancellationToken? cancellationToken = null, List<HttpRequestHeaderSimplified>? httpRequestHeaders = null, object? sendObject = null)
         {
             if (string.IsNullOrEmpty(apiUrl) || string.IsNullOrWhiteSpace(apiUrl))
                 throw new InvalidOperationException("apiUrl is empty or just whitespace.");
@@ -55,20 +52,20 @@ namespace Coeo.Extensions.RestApiClient
                     var apiBody = new StringContent(sendObjectAsJsonString, Encoding.UTF8, MEDIA_TYPE);
 
                     if (requestType == RequestType.post)
-                        apiResponse = await client.PostAsync(apiUrl, apiBody);
+                        apiResponse = await client.PostAsync(apiUrl, apiBody, cancellationToken ?? new CancellationTokenSource().Token);
 
                     if (requestType == RequestType.put)
-                        apiResponse = await client.PutAsync(apiUrl, apiBody);
+                        apiResponse = await client.PutAsync(apiUrl, apiBody, cancellationToken ?? new CancellationTokenSource().Token);
                 }
                 else
-                    apiResponse = await client.GetAsync(apiUrl);
+                    apiResponse = await client.GetAsync(apiUrl, cancellationToken ?? new CancellationTokenSource().Token);
 
                 if (!apiResponse.IsSuccessStatusCode)
                 {
-                    throw new HttpRequestException(string.Format(HTTP_REQUEST_EXCEPTION_MESSAGE, 
-                        apiResponse.StatusCode, 
-                        apiResponse.Headers, 
-                        apiResponse.Content, 
+                    throw new HttpRequestException(string.Format(HTTP_REQUEST_EXCEPTION_MESSAGE,
+                        apiResponse.StatusCode,
+                        apiResponse.Headers,
+                        apiResponse.Content,
                         apiResponse.RequestMessage,
                         apiResponse.ReasonPhrase,
                         apiResponse.Version,

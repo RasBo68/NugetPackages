@@ -7,8 +7,8 @@
       "RelativeMoniker": "D:0:0:{95D71183-30C6-4FEC-AFE0-AFBB0684DFD2}|Coeo.Extensions.RestApiClient\\Coeo.Extensions.RestApiClient.csproj|solutionrelative:coeo.extensions.restapiclient\\restapiclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{95D71183-30C6-4FEC-AFE0-AFBB0684DFD2}|Coeo.Extensions.RestApiClient\\Coeo.Extensions.RestApiClient.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\coeo.extensions.restapiclient\\irestapiclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95D71183-30C6-4FEC-AFE0-AFBB0684DFD2}|Coeo.Extensions.RestApiClient\\Coeo.Extensions.RestApiClient.csproj|solutionrelative:coeo.extensions.restapiclient\\irestapiclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{95D71183-30C6-4FEC-AFE0-AFBB0684DFD2}|Coeo.Extensions.RestApiClient\\Coeo.Extensions.RestApiClient.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\coeo.extensions.restapiclient\\coeo.extensions.restapiclient.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{95D71183-30C6-4FEC-AFE0-AFBB0684DFD2}|Coeo.Extensions.RestApiClient\\Coeo.Extensions.RestApiClient.csproj|solutionrelative:coeo.extensions.restapiclient\\coeo.extensions.restapiclient.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3ACD1199-ACCA-4DCA-A5BB-4D61257C52F4}|Coeo.Converters.Xml\\Coeo.Converters.Xml.csproj|c:\\users\\boztoprak\\desktop\\nugetpackages\\coeo.converters.xml\\xmlconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -55,15 +55,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "IRestApiClientService.cs",
-              "DocumentMoniker": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\Coeo.Extensions.RestApiClient\\IRestApiClientService.cs",
-              "RelativeDocumentMoniker": "Coeo.Extensions.RestApiClient\\IRestApiClientService.cs",
-              "ToolTip": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\Coeo.Extensions.RestApiClient\\IRestApiClientService.cs",
-              "RelativeToolTip": "Coeo.Extensions.RestApiClient\\IRestApiClientService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-06T09:31:06.277Z",
-              "EditorCaption": ""
+              "Title": "Coeo.Extensions.RestApiClient.csproj",
+              "DocumentMoniker": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\Coeo.Extensions.RestApiClient\\Coeo.Extensions.RestApiClient.csproj",
+              "RelativeDocumentMoniker": "Coeo.Extensions.RestApiClient\\Coeo.Extensions.RestApiClient.csproj",
+              "ToolTip": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\Coeo.Extensions.RestApiClient\\Coeo.Extensions.RestApiClient.csproj",
+              "RelativeToolTip": "Coeo.Extensions.RestApiClient\\Coeo.Extensions.RestApiClient.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-06T10:26:33.253Z"
             },
             {
               "$type": "Document",
@@ -73,7 +72,7 @@
               "RelativeDocumentMoniker": "Coeo.Extensions.RestApiClient\\RestApiClientService.cs",
               "ToolTip": "C:\\Users\\Boztoprak\\Desktop\\NugetPackages\\Coeo.Extensions.RestApiClient\\RestApiClientService.cs",
               "RelativeToolTip": "Coeo.Extensions.RestApiClient\\RestApiClientService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAC/AAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAgwBgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-06T09:31:04.243Z",
               "EditorCaption": ""
@@ -88,8 +87,7 @@
               "RelativeToolTip": "Coeo.Converters.Xml\\Coeo.Converters.Xml.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-01-05T17:16:50.019Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-05T17:16:50.019Z"
             },
             {
               "$type": "Document",
@@ -101,8 +99,7 @@
               "RelativeToolTip": "Coeo.Converters.Xml\\XmlConverter.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-05T15:34:17.328Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-05T15:34:17.328Z"
             },
             {
               "$type": "Document",
@@ -114,8 +111,7 @@
               "RelativeToolTip": "Coeo.FileSystem.Repositories.Files\\Coeo.FileSystem.Repositories.Files.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-01-05T10:50:38.677Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-05T10:50:38.677Z"
             },
             {
               "$type": "Document",

@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	  <PackageId>Coeo.Extensions.RestApiClient</PackageId>
-	  <Version>1.0.3</Version>
+	  <Version>1.0.4</Version>
 	  <Authors>Rasit Boztoprak</Authors>
 	  <Description>Abstraction layer for rest api accesses</Description>
 	  <PackageTags>rest api client, nuget</PackageTags>
