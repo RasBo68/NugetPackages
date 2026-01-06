@@ -8,6 +8,8 @@ namespace Coeo.Extensions.RestApiClient
     public class RestApiClientService : IRestApiClientService
     {
         private const string MEDIA_TYPE = "application/json";
+        private const string HTTP_REQUEST_EXCEPTION_MESSAGE = "Http request failed! Detailed Informations:\nStatusCode: {0} \nHeaders: {1}\nContent: {2}" +
+            "\nRequestMessage: {3}\nReasonPhrase: {4}\nVersion: {5}\nTrailingHeaders: {6}";
 
         public async Task<HttpResponseMessage> RequestPost(string apiUrl, object sendObject, List<HttpRequestHeaderSimplified>? httpRequestHeaders = null)
         {
@@ -59,8 +61,18 @@ namespace Coeo.Extensions.RestApiClient
                         apiResponse = await client.PutAsync(apiUrl, apiBody);
                 }
                 else
-                {
                     apiResponse = await client.GetAsync(apiUrl);
+
+                if (!apiResponse.IsSuccessStatusCode)
+                {
+                    throw new HttpRequestException(string.Format(HTTP_REQUEST_EXCEPTION_MESSAGE, 
+                        apiResponse.StatusCode, 
+                        apiResponse.Headers, 
+                        apiResponse.Content, 
+                        apiResponse.RequestMessage,
+                        apiResponse.ReasonPhrase,
+                        apiResponse.Version,
+                        apiResponse.TrailingHeaders));
                 }
 
                 return apiResponse;
