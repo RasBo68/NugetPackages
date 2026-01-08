@@ -15,7 +15,11 @@ namespace Coeo.FileSystem.Repositories.Files
             _directoryHelper = directoryHelper;
             _fileHelper = fileHelper;
         }
-
+        public Task ConnectClient(CancellationToken? cancellationToken = null)
+        {
+            // No connection necessary
+            return Task.CompletedTask;
+        }
         public async Task<IEnumerable<string>> ListAllFilesAsync(string directory, CancellationToken? cancellationToken = null)
         {
             return await ExecuteWithHandling(async () =>

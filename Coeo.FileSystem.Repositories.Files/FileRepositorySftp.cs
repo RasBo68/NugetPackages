@@ -1,4 +1,4 @@
-﻿using Coeo.FileSystem.Repositories.Files.Extensions;
+﻿
 using Renci.SshNet;
 using System.Text;
 
@@ -11,7 +11,9 @@ namespace Coeo.FileSystem.Repositories.Files
         private readonly IDirectoryHelper _directoryHelper;
         private readonly IFileHelper _fileHelper;
         private readonly SftpClient _client;
-        protected const string SFTP_CONNECTION_ERROR = "Could not connect to SFTP server.";
+
+        private static string SFTP_CONNECTION_ERROR = "Could not connect to SFTP server.";
+        private static string SFTP_DISCONNECTION_ERROR = "Could not disconnect from SFTP server.";
         private bool _disposed = false;
 
         /*
@@ -27,9 +29,24 @@ namespace Coeo.FileSystem.Repositories.Files
             _fileHelper = fileHelper;
             _pathHelper = pathHelper;
             _client = client;
-            _client.ConnectSftpClient();
         }
 
+        public async Task ConnectClient(CancellationToken? cancellationToken = null)
+        {
+            try
+            {
+                if (!_client.IsConnected)
+                    await _client.ConnectAsync(cancellationToken ?? CancellationToken.None);
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidOperationException(SFTP_CONNECTION_ERROR, ex);
+            }
+
+
+            if (!_client.IsConnected)
+                throw new InvalidOperationException(SFTP_CONNECTION_ERROR);
+        }
         public async Task<IEnumerable<string>> ListAllFilesAsync(string remoteDirectory, CancellationToken? cancellationToken = null)
         {
             return await ExecuteWithHandling(async () =>
@@ -93,8 +110,21 @@ namespace Coeo.FileSystem.Repositories.Files
         {
             if(!_disposed)
             {
-                _client.DisconnectSftpClient();
+                DisconnectSftpClient();
                 _disposed = true;
+            }
+        }
+
+        private void DisconnectSftpClient()
+        {
+            try
+            {
+                if (_client.IsConnected)
+                    _client.Disconnect();
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidOperationException(SFTP_DISCONNECTION_ERROR, ex);
             }
         }
     }
