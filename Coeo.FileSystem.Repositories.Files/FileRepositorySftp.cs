@@ -36,16 +36,16 @@ namespace Coeo.FileSystem.Repositories.Files
             try
             {
                 if (!_client.IsConnected)
+                {
                     await _client.ConnectAsync(cancellationToken ?? CancellationToken.None);
+                    if (!_client.IsConnected)
+                        throw new InvalidOperationException(SFTP_CONNECTION_ERROR);
+                }
             }
             catch (Exception ex)
             {
                 throw new InvalidOperationException(SFTP_CONNECTION_ERROR, ex);
             }
-
-
-            if (!_client.IsConnected)
-                throw new InvalidOperationException(SFTP_CONNECTION_ERROR);
         }
         public async Task<IEnumerable<string>> ListAllFilesAsync(string remoteDirectory, CancellationToken? cancellationToken = null)
         {
