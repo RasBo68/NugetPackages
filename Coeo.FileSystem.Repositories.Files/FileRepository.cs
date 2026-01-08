@@ -16,10 +16,12 @@ namespace Coeo.FileSystem.Repositories.Files
             _fileHelper = fileHelper;
         }
 
-        public async Task<IEnumerable<string>> ListAllFilesAsync(string directory, CancellationToken? cancellationToken)
+        public async Task<IEnumerable<string>> ListAllFilesAsync(string directory, CancellationToken? cancellationToken = null)
         {
             return await ExecuteWithHandling(async () =>
             {
+                cancellationToken?.ThrowIfCancellationRequested();
+
                 _pathHelper.CheckPathString(directory);
                 await _directoryHelper.CheckDirectoryAsync(directory, cancellationToken);
                 var files = Directory.GetFiles(directory).AsEnumerable(); // no asynchronous version available, cause operation is fast
@@ -27,29 +29,35 @@ namespace Coeo.FileSystem.Repositories.Files
             });
 
         }
-        public async Task UploadFileAsync(string contentString, string filePath, CancellationToken? cancellationToken)
+        public async Task UploadFileAsync(string contentString, string filePath, CancellationToken? cancellationToken = null)
         {
             await ExecuteWithHandling(async () =>
             {
+                cancellationToken?.ThrowIfCancellationRequested();
+
                 _pathHelper.CheckPathString(filePath);
                 // In the windows file system, the default encoding is UTF-16 LE (Little Endian).
                 await File.WriteAllTextAsync(filePath, contentString);
             });
         }
-        public async Task<string> DownloadFileAsync(string filePath, CancellationToken? cancellationToken)
+        public async Task<string> DownloadFileAsync(string filePath, CancellationToken? cancellationToken = null)
         {
             return await ExecuteWithHandling(async () =>
             {
+                cancellationToken?.ThrowIfCancellationRequested();
+
                 _pathHelper.CheckPathString(filePath);
                 await _fileHelper.CheckFileAsync(filePath, cancellationToken);
                 // In the windows file system, the default encoding is UTF-16 LE (Little Endian).
                 return await File.ReadAllTextAsync(filePath);
             });
         }
-        public async Task DeleteFileAsync(string filePath, CancellationToken? cancellationToken)
+        public async Task DeleteFileAsync(string filePath, CancellationToken? cancellationToken = null)
         {
             await ExecuteWithHandling(async () =>
             {
+                cancellationToken?.ThrowIfCancellationRequested();
+
                 _pathHelper.CheckPathString(filePath);
                 await _fileHelper.CheckFileAsync(filePath, cancellationToken);
                 File.Delete(filePath); // no asynchronous version available, cause operation is fast

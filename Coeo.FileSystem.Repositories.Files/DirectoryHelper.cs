@@ -7,20 +7,24 @@
         {
             _pathHelper = pathHelper;
         }
-        public async Task CheckDirectoryAsync(string directory, CancellationToken? cancellationToken)
+        public async Task CheckDirectoryAsync(string directory, CancellationToken? cancellationToken = null)
         {
             await ExecuteWithHandling(() =>
             {
+                cancellationToken?.ThrowIfCancellationRequested();
+
                 var fileExists = Directory.Exists(directory); // no asynchronous version available, cause operation is fast
                 if (!fileExists) 
                     throw new InvalidOperationException(string.Format(DIRECTORY_DOES_NOT_EXIST_ERROR, directory));
                 return Task.CompletedTask;
             });
         }
-        public async Task CreateDirectoryAsync(string directory, CancellationToken? cancellationToken)
+        public async Task CreateDirectoryAsync(string directory, CancellationToken? cancellationToken = null)
         {
             await ExecuteWithHandling(() =>
             {
+                cancellationToken?.ThrowIfCancellationRequested();
+
                 _pathHelper.CheckPathString(directory);
                 var dirName = _pathHelper.GetDirectoryName(directory);
                 var dirPath = _pathHelper.GetFileNameWithoutExtension(directory);

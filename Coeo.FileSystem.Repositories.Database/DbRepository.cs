@@ -49,7 +49,7 @@ namespace Coeo.FileSystem.Repositories.Database
                 return _dbSet;
             });
         }
-        public virtual async Task<TEntity?> GetByIdAsync(int id, CancellationToken? cancellationToken)
+        public virtual async Task<TEntity?> GetByIdAsync(int id, CancellationToken? cancellationToken = null)
         {
             if (id < 1)
                 throw new ArgumentOutOfRangeException(string.Format(ARGUMENT_OUT_OF_RANGE_EXCEPTION, READ, id.ToString()));
@@ -59,7 +59,7 @@ namespace Coeo.FileSystem.Repositories.Database
                 return await _dbSet.FindAsync(id, cancellationToken ?? CancellationToken.None);
             }, id);
         }
-        public async Task AddAsync(TEntity entity, CancellationToken? cancellationToken)
+        public async Task AddAsync(TEntity entity, CancellationToken? cancellationToken = null)
         {
             await ExecuteWithHandlingAsync(async () =>
             {
@@ -68,7 +68,7 @@ namespace Coeo.FileSystem.Repositories.Database
                 return new object();
             }, entity);
         }
-        public async Task AddRangeAsync(IEnumerable<TEntity> entities, CancellationToken? cancellationToken)
+        public async Task AddRangeAsync(IEnumerable<TEntity> entities, CancellationToken? cancellationToken = null)
         {
             if (!entities.Any()) return;
 
@@ -79,7 +79,7 @@ namespace Coeo.FileSystem.Repositories.Database
                 return new object();
             }, entities);
         }
-        public virtual async Task UpdateAsync(TEntity entity, CancellationToken? cancellationToken)
+        public virtual async Task UpdateAsync(TEntity entity, CancellationToken? cancellationToken = null)
         {
             await ExecuteWithHandlingAsync(async () =>
             {
@@ -88,7 +88,7 @@ namespace Coeo.FileSystem.Repositories.Database
                 return new object();
             }, entity);
         }
-        public virtual async Task UpdateRangeAsync(IEnumerable<TEntity> entities, CancellationToken? cancellationToken)
+        public virtual async Task UpdateRangeAsync(IEnumerable<TEntity> entities, CancellationToken? cancellationToken = null)
         {
             if (!entities.Any()) return;
 
@@ -99,7 +99,7 @@ namespace Coeo.FileSystem.Repositories.Database
                 return new object();
             }, entities);
         }
-        public async Task DeleteAsync(int id, CancellationToken? cancellationToken)
+        public async Task DeleteAsync(int id, CancellationToken? cancellationToken = null)
         {
             if (id < 1)
                 throw new ArgumentOutOfRangeException(string.Format(ARGUMENT_OUT_OF_RANGE_EXCEPTION, DELETE, id.ToString()));
@@ -115,7 +115,7 @@ namespace Coeo.FileSystem.Repositories.Database
                 return new object();
             }, id);
         }
-        public async Task DeleteRangeAsync(IEnumerable<TEntity> entities, CancellationToken? cancellationToken)
+        public async Task DeleteRangeAsync(IEnumerable<TEntity> entities, CancellationToken? cancellationToken = null)
         {
             if (!entities.Any()) return;
 

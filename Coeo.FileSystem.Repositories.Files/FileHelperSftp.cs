@@ -11,7 +11,7 @@ namespace Coeo.FileSystem.Repositories.Files
         {
             _client = client;
         }
-        public async Task CheckFileAsync(string remoteFilePath, CancellationToken? cancellationToken)
+        public async Task CheckFileAsync(string remoteFilePath, CancellationToken? cancellationToken = null)
         {
             await ExecuteWithHandlingAsync(async() =>
             {

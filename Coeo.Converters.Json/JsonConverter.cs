@@ -1,36 +1,43 @@
-﻿using System.Text.Json;
+﻿
+using Coeo.Converters.Json.Exceptions;
+using System.Text.Json;
 
 namespace Coeo.Converters.Json
 {
     public class JsonConverter : IJsonConverter
     {
         private const string JSON_STRING_EMPTY_OR_WHITESPACE = "Json string is empty or just whitespace.";
-        private const string DESERIALIZING_ERROR = "Error during JSON deserialization.";
-        private const string DESERIALIZING_NULL_ERROR = "Deserialization resulted in null.";
+        private const string DESERIALIZATION_EXCEPTION = "Deserialization of the xmlContentString \n {0} \n failed.";
+        private const string SERIALIZATION_EXCEPTION = "serialization of the object \n {0} \n failed.";
 
-        public string ConvertObjectToJsonString(object entity)
-        {
-            return JsonSerializer.Serialize(entity);
-        }
-
-        public T ConvertJsonStringToObject<T>(string jsonString)
+        public TObject ConvertJsonStringToObject<TObject>(string jsonString)
         {
             if (string.IsNullOrEmpty(jsonString) || string.IsNullOrWhiteSpace(jsonString))
-                throw new InvalidOperationException(JSON_STRING_EMPTY_OR_WHITESPACE);
+                throw new ArgumentException(JSON_STRING_EMPTY_OR_WHITESPACE);
 
             try
             {
                 var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-
-                T? val = JsonSerializer.Deserialize<T>(jsonString, options);
-                if (val == null)
-                    throw new InvalidOperationException(DESERIALIZING_NULL_ERROR);
-
-                return val;
+                return JsonSerializer.Deserialize<TObject>(jsonString, options)!;
             }
-            catch (JsonException ex)
+            catch (Exception ex)
             {
-                throw new InvalidOperationException(DESERIALIZING_ERROR, ex);
+                throw new JsonDeserializationException(
+                    string.Format(DESERIALIZATION_EXCEPTION, jsonString),
+                    ex);
+            }
+        }
+        public string ConvertObjectToJsonString(object entity)
+        {
+            try
+            {
+                return JsonSerializer.Serialize(entity);
+            }
+            catch (Exception ex)
+            {
+                throw new JsonSerializationException(
+                    string.Format(SERIALIZATION_EXCEPTION, entity.ToString()),
+                    ex);
             }
         }
     }

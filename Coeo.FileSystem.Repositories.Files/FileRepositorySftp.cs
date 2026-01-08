@@ -30,7 +30,7 @@ namespace Coeo.FileSystem.Repositories.Files
             _client.ConnectSftpClient();
         }
 
-        public async Task<IEnumerable<string>> ListAllFilesAsync(string remoteDirectory, CancellationToken? cancellationToken)
+        public async Task<IEnumerable<string>> ListAllFilesAsync(string remoteDirectory, CancellationToken? cancellationToken = null)
         {
             return await ExecuteWithHandling(async () =>
             {
@@ -47,7 +47,7 @@ namespace Coeo.FileSystem.Repositories.Files
                 });
             });
         }
-        public async Task UploadFileAsync(string contentString, string remoteFilePath, CancellationToken? cancellationToken)
+        public async Task UploadFileAsync(string contentString, string remoteFilePath, CancellationToken? cancellationToken = null)
         {
             await ExecuteWithHandling(async () =>
             {
@@ -60,7 +60,7 @@ namespace Coeo.FileSystem.Repositories.Files
                 return Task.CompletedTask;
             });
         }
-        public async Task<string> DownloadFileAsync(string remoteFilePath, CancellationToken? cancellationToken)
+        public async Task<string> DownloadFileAsync(string remoteFilePath, CancellationToken? cancellationToken = null)
         {
             return await ExecuteWithHandling(async () =>
             {
@@ -78,7 +78,7 @@ namespace Coeo.FileSystem.Repositories.Files
                 return contentString;
             });
         }
-        public async Task DeleteFileAsync(string remoteFilePath, CancellationToken? cancellationToken)
+        public async Task DeleteFileAsync(string remoteFilePath, CancellationToken? cancellationToken = null)
         {
             await ExecuteWithHandling(async () =>
             {

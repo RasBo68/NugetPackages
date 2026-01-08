@@ -4,10 +4,10 @@ namespace Coeo.FileSystem.Repositories.Files
 {
     public interface IFileRepository
     {
-        Task DeleteFileAsync(string filePath, CancellationToken? cancellationToken);
+        Task DeleteFileAsync(string filePath, CancellationToken? cancellationToken = null);
         void Dispose();
-        Task<string> DownloadFileAsync(string filePath, CancellationToken? cancellationToken);
-        Task<IEnumerable<string>> ListAllFilesAsync(string directory, CancellationToken? cancellationToken);
-        Task UploadFileAsync(string contentString, string filePath, CancellationToken? cancellationToken);
+        Task<string> DownloadFileAsync(string filePath, CancellationToken? cancellationToken = null);
+        Task<IEnumerable<string>> ListAllFilesAsync(string directory, CancellationToken? cancellationToken = null);
+        Task UploadFileAsync(string contentString, string filePath, CancellationToken? cancellationToken = null);
     }
 }

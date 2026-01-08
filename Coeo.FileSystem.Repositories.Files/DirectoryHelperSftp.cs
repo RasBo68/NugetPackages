@@ -14,7 +14,7 @@ namespace Coeo.FileSystem.Repositories.Files
             _client = client;
             _client.ConnectSftpClient();
         }
-        public async Task CheckDirectoryAsync(string remoteDirectory, CancellationToken? cancellationToken)
+        public async Task CheckDirectoryAsync(string remoteDirectory, CancellationToken? cancellationToken = null)
         {
             await ExecuteWithHandling(async () =>
             {
@@ -25,7 +25,7 @@ namespace Coeo.FileSystem.Repositories.Files
                 return Task.CompletedTask;
             });
         }
-        public async Task CreateDirectoryAsync(string directory, CancellationToken? cancellationToken)
+        public async Task CreateDirectoryAsync(string directory, CancellationToken? cancellationToken = null)
         {
             await ExecuteWithHandling(async () =>
             {
