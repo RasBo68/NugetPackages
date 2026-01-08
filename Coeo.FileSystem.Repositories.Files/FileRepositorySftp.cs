@@ -12,8 +12,9 @@ namespace Coeo.FileSystem.Repositories.Files
         private readonly IFileHelper _fileHelper;
         private readonly SftpClient _client;
 
-        private static string SFTP_CONNECTION_ERROR = "Could not connect to SFTP server.";
-        private static string SFTP_DISCONNECTION_ERROR = "Could not disconnect from SFTP server.";
+        private static string SFTP_CONNECTION_ERROR = "Could not connect to SFTP server. Please check the sftp credentials.";
+        private static string SFTP_CONNECTION_EXCEPTION = "Unexpected exception appeared during connection to SFTP server.";
+        private static string SFTP_DISCONNECTION_EXCEPTION = "Could not disconnect from SFTP server.";
         private bool _disposed = false;
 
         /*
@@ -44,7 +45,7 @@ namespace Coeo.FileSystem.Repositories.Files
             }
             catch (Exception ex)
             {
-                throw new InvalidOperationException(SFTP_CONNECTION_ERROR, ex);
+                throw new InvalidOperationException(SFTP_CONNECTION_EXCEPTION, ex);
             }
         }
         public async Task<IEnumerable<string>> ListAllFilesAsync(string remoteDirectory, CancellationToken? cancellationToken = null)
@@ -124,7 +125,7 @@ namespace Coeo.FileSystem.Repositories.Files
             }
             catch (Exception ex)
             {
-                throw new InvalidOperationException(SFTP_DISCONNECTION_ERROR, ex);
+                throw new InvalidOperationException(SFTP_DISCONNECTION_EXCEPTION, ex);
             }
         }
     }
