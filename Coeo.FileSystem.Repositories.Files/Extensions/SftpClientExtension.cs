@@ -5,11 +5,19 @@ namespace Coeo.FileSystem.Repositories.Files.Extensions
     internal static class SftpClientExtension
     {
         private static string SFTP_CONNECTION_ERROR = "Could not connect to SFTP server.";
+        private static string SFTP_DISCONNECTION_ERROR = "Could not disconnect from SFTP server.";
 
         internal static void ConnectSftpClient(this SftpClient sftpClient)
         {
-            if (!sftpClient.IsConnected)
-                sftpClient.Connect();
+            try
+            {
+                if (!sftpClient.IsConnected)
+                    sftpClient.Connect();
+            }catch(Exception ex)
+            {
+                throw new InvalidOperationException(SFTP_CONNECTION_ERROR, ex);
+            }
+
 
             if (!sftpClient.IsConnected)
                 throw new InvalidOperationException(SFTP_CONNECTION_ERROR);
@@ -17,8 +25,15 @@ namespace Coeo.FileSystem.Repositories.Files.Extensions
 
         internal static void DisconnectSftpClient(this SftpClient sftpClient)
         {
-            if (sftpClient.IsConnected)
-                sftpClient.Disconnect();
+            try
+            {
+                if (sftpClient.IsConnected)
+                    sftpClient.Disconnect();
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidOperationException(SFTP_DISCONNECTION_ERROR, ex);
+            }
         }
     }
 }
