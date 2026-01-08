@@ -1,4 +1,5 @@
 ﻿using Renci.SshNet;
+using System.Threading;
 
 namespace Coeo.FileSystem.Repositories.Files
 {
@@ -10,11 +11,11 @@ namespace Coeo.FileSystem.Repositories.Files
         {
             _client = client;
         }
-        public async Task CheckFileAsync(string remoteFilePath)
+        public async Task CheckFileAsync(string remoteFilePath, CancellationToken? cancellationToken)
         {
             await ExecuteWithHandlingAsync(async() =>
             {
-                var fileExists = await _client.ExistsAsync(remoteFilePath);
+                var fileExists = await _client.ExistsAsync(remoteFilePath, cancellationToken ?? CancellationToken.None);
                 if (!fileExists)
                     throw new InvalidOperationException(string.Format(FILE_DOES_NOT_EXIST_ERROR, remoteFilePath));
 

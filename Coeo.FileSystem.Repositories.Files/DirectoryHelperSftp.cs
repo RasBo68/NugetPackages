@@ -1,5 +1,6 @@
 ﻿using Coeo.FileSystem.Repositories.Files.Extensions;
 using Renci.SshNet;
+using System.Threading;
 
 namespace Coeo.FileSystem.Repositories.Files
 {
@@ -13,18 +14,18 @@ namespace Coeo.FileSystem.Repositories.Files
             _client = client;
             _client.ConnectSftpClient();
         }
-        public async Task CheckDirectoryAsync(string remoteDirectory)
+        public async Task CheckDirectoryAsync(string remoteDirectory, CancellationToken? cancellationToken)
         {
             await ExecuteWithHandling(async () =>
             {
-                var attributes = await _client.GetAttributesAsync(remoteDirectory, CancellationToken.None);
+                var attributes = await _client.GetAttributesAsync(remoteDirectory, cancellationToken ?? CancellationToken.None);
                 if (!attributes.IsDirectory)
                     throw new InvalidOperationException(string.Format(DIRECTORY_DOES_NOT_EXIST_ERROR, remoteDirectory));
 
                 return Task.CompletedTask;
             });
         }
-        public async Task CreateDirectoryAsync(string directory)
+        public async Task CreateDirectoryAsync(string directory, CancellationToken? cancellationToken)
         {
             await ExecuteWithHandling(async () =>
             {
@@ -32,8 +33,9 @@ namespace Coeo.FileSystem.Repositories.Files
                 var dirName = _pathHelper.GetDirectoryName(directory);
                 var dirPath = _pathHelper.GetFileNameWithoutExtension(directory);
                 directory = _pathHelper.CombinePaths(dirName, dirPath);
-                if (!_client.Exists(directory))
-                    await Task.Run(() => _client.CreateDirectory(directory));
+                var token = cancellationToken ?? CancellationToken.None;
+                if (!await _client.ExistsAsync(directory, token))
+                    await _client.CreateDirectoryAsync(directory, token);
 
                 return Task.CompletedTask;
             });

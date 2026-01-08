@@ -2,10 +2,11 @@
 using Coeo.FileSystem.Repositories.Database.Exceptions;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Threading;
 
 namespace Coeo.FileSystem.Repositories.Database
 {
-    public class DbRepository<TEntity>: IDbRepository<TEntity> where TEntity : class
+    public class DbRepository<TEntity> : IDbRepository<TEntity> where TEntity : class
     {
         protected readonly DbContext _context;
         protected readonly DbSet<TEntity> _dbSet;
@@ -34,94 +35,94 @@ namespace Coeo.FileSystem.Repositories.Database
             _dbSet = _context.Set<TEntity>();
         }
 
-        public IQueryable<TEntity> ReadAll()
+        public IQueryable<TEntity> ReadAllQuery()
         {
             return ExecuteWithHandling(() =>
             {
                 return _dbSet.AsNoTracking();
             });
         }
-        public IQueryable<TEntity> GetAll()
+        public IQueryable<TEntity> GetAllQuery()
         {
             return ExecuteWithHandling(() =>
             {
                 return _dbSet;
             });
         }
-        public virtual async Task<TEntity?> GetByIdAsync(int id)
+        public virtual async Task<TEntity?> GetByIdAsync(int id, CancellationToken? cancellationToken)
         {
             if (id < 1)
                 throw new ArgumentOutOfRangeException(string.Format(ARGUMENT_OUT_OF_RANGE_EXCEPTION, READ, id.ToString()));
 
             return await ExecuteWithHandlingAsync(async () =>
             {
-                return await _dbSet.FindAsync(id);
+                return await _dbSet.FindAsync(id, cancellationToken ?? CancellationToken.None);
             }, id);
         }
-        public async Task AddAsync(TEntity entity)
+        public async Task AddAsync(TEntity entity, CancellationToken? cancellationToken)
         {
             await ExecuteWithHandlingAsync(async () =>
             {
-                await _dbSet.AddAsync(entity);
-                await _context.SaveChangesAsync();
+                await _dbSet.AddAsync(entity, cancellationToken ?? CancellationToken.None);
+                await _context.SaveChangesAsync(cancellationToken ?? CancellationToken.None);
                 return new object();
             }, entity);
         }
-        public async Task AddRangeAsync(IEnumerable<TEntity> entities)
+        public async Task AddRangeAsync(IEnumerable<TEntity> entities, CancellationToken? cancellationToken)
         {
             if (!entities.Any()) return;
 
             await ExecuteWithHandlingAsync(async () =>
             {
-                await _dbSet.AddRangeAsync(entities);
-                await _context.SaveChangesAsync();
+                await _dbSet.AddRangeAsync(entities, cancellationToken ?? CancellationToken.None);
+                await _context.SaveChangesAsync(cancellationToken ?? CancellationToken.None);
                 return new object();
             }, entities);
         }
-        public virtual async Task UpdateAsync(TEntity entity)
+        public virtual async Task UpdateAsync(TEntity entity, CancellationToken? cancellationToken)
         {
             await ExecuteWithHandlingAsync(async () =>
             {
                 _dbSet.Update(entity);
-                await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync(cancellationToken ?? CancellationToken.None);
                 return new object();
             }, entity);
         }
-        public virtual async Task UpdateRangeAsync(IEnumerable<TEntity> entities)
+        public virtual async Task UpdateRangeAsync(IEnumerable<TEntity> entities, CancellationToken? cancellationToken)
         {
             if (!entities.Any()) return;
 
             await ExecuteWithHandlingAsync(async () =>
             {
                 _dbSet.UpdateRange(entities);
-                await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync(cancellationToken ?? CancellationToken.None);
                 return new object();
             }, entities);
         }
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(int id, CancellationToken? cancellationToken)
         {
             if (id < 1)
                 throw new ArgumentOutOfRangeException(string.Format(ARGUMENT_OUT_OF_RANGE_EXCEPTION, DELETE, id.ToString()));
 
             await ExecuteWithHandlingAsync(async () =>
             {
-                var entity = await GetByIdAsync(id);
+                var entity = await GetByIdAsync(id, cancellationToken ?? CancellationToken.None);
                 if (entity != null)
                 {
                     _dbSet.Remove(entity);
-                    await _context.SaveChangesAsync();
+                    await _context.SaveChangesAsync(cancellationToken ?? CancellationToken.None);
                 }
                 return new object();
             }, id);
         }
-        public async Task DeleteRangeAsync(IEnumerable<TEntity> entities)
+        public async Task DeleteRangeAsync(IEnumerable<TEntity> entities, CancellationToken? cancellationToken)
         {
             if (!entities.Any()) return;
 
             await ExecuteWithHandlingAsync(async () =>
             {
                 _dbSet.RemoveRange(entities);
-                await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync(cancellationToken ?? CancellationToken.None);
                 return new object();
             }, entities);
         }

@@ -16,18 +16,18 @@ namespace Coeo.FileSystem.Repositories.Files
             _fileHelper = fileHelper;
         }
 
-        public async Task<IEnumerable<string>> ListAllFilesAsync(string directory)
+        public async Task<IEnumerable<string>> ListAllFilesAsync(string directory, CancellationToken? cancellationToken)
         {
             return await ExecuteWithHandling(async () =>
             {
                 _pathHelper.CheckPathString(directory);
-                await _directoryHelper.CheckDirectoryAsync(directory);
+                await _directoryHelper.CheckDirectoryAsync(directory, cancellationToken);
                 var files = Directory.GetFiles(directory).AsEnumerable(); // no asynchronous version available, cause operation is fast
                 return files;
             });
 
         }
-        public async Task UploadFileAsync(string contentString, string filePath)
+        public async Task UploadFileAsync(string contentString, string filePath, CancellationToken? cancellationToken)
         {
             await ExecuteWithHandling(async () =>
             {
@@ -36,22 +36,22 @@ namespace Coeo.FileSystem.Repositories.Files
                 await File.WriteAllTextAsync(filePath, contentString);
             });
         }
-        public async Task<string> DownloadFileAsync(string filePath)
+        public async Task<string> DownloadFileAsync(string filePath, CancellationToken? cancellationToken)
         {
             return await ExecuteWithHandling(async () =>
             {
                 _pathHelper.CheckPathString(filePath);
-                await _fileHelper.CheckFileAsync(filePath);
+                await _fileHelper.CheckFileAsync(filePath, cancellationToken);
                 // In the windows file system, the default encoding is UTF-16 LE (Little Endian).
                 return await File.ReadAllTextAsync(filePath);
             });
         }
-        public async Task DeleteFileAsync(string filePath)
+        public async Task DeleteFileAsync(string filePath, CancellationToken? cancellationToken)
         {
             await ExecuteWithHandling(async () =>
             {
                 _pathHelper.CheckPathString(filePath);
-                await _fileHelper.CheckFileAsync(filePath);
+                await _fileHelper.CheckFileAsync(filePath, cancellationToken);
                 File.Delete(filePath); // no asynchronous version available, cause operation is fast
             });
         }

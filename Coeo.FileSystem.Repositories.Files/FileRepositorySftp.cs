@@ -30,14 +30,16 @@ namespace Coeo.FileSystem.Repositories.Files
             _client.ConnectSftpClient();
         }
 
-        public async Task<IEnumerable<string>> ListAllFilesAsync(string remoteDirectory)
+        public async Task<IEnumerable<string>> ListAllFilesAsync(string remoteDirectory, CancellationToken? cancellationToken)
         {
             return await ExecuteWithHandling(async () =>
             {
                 _pathHelper.CheckPathString(remoteDirectory);
-                await _directoryHelper.CheckDirectoryAsync(remoteDirectory);
+                await _directoryHelper.CheckDirectoryAsync(remoteDirectory, cancellationToken ?? CancellationToken.None);
                 return await Task.Run(() =>
                 {
+                    cancellationToken?.ThrowIfCancellationRequested();
+
                     var files = _client.ListDirectory(remoteDirectory)
                         .Where(f => !f.IsDirectory && !f.Name.StartsWith("."))
                         .Select(f => f.FullName);
@@ -45,7 +47,7 @@ namespace Coeo.FileSystem.Repositories.Files
                 });
             });
         }
-        public async Task UploadFileAsync(string contentString, string remoteFilePath)
+        public async Task UploadFileAsync(string contentString, string remoteFilePath, CancellationToken? cancellationToken)
         {
             await ExecuteWithHandling(async () =>
             {
@@ -54,19 +56,20 @@ namespace Coeo.FileSystem.Repositories.Files
                 // SFTP servers often use ISO-8859-1 encoding, which is due to the Linux system.
                 var contentBytes = Encoding.GetEncoding("ISO-8859-1").GetBytes(contentString); 
                 using var ms = new MemoryStream(contentBytes);  // create memory stream in ram memory from byte array
-                await _client.UploadFileAsync(ms, remoteFilePath);
+                await _client.UploadFileAsync(ms, remoteFilePath, cancellationToken ?? CancellationToken.None);
                 return Task.CompletedTask;
             });
         }
-        public async Task<string> DownloadFileAsync(string remoteFilePath)
+        public async Task<string> DownloadFileAsync(string remoteFilePath, CancellationToken? cancellationToken)
         {
             return await ExecuteWithHandling(async () =>
             {
                 _pathHelper.CheckPathString(remoteFilePath);
-                await _fileHelper.CheckFileAsync(remoteFilePath);
+                var token = cancellationToken ?? CancellationToken.None;
+                await _fileHelper.CheckFileAsync(remoteFilePath, token);
                 // using -> automatically disposes the object after use
                 using var ms = new MemoryStream(); // Buffer in ram memory, which behaves like a file
-                await _client.DownloadFileAsync(remoteFilePath, ms); // download file from sftp to memory stream
+                await _client.DownloadFileAsync(remoteFilePath, ms, token); // download file from sftp to memory stream
                 ms.Position = 0;    // after download the cursor of memory stream is at the end, set position to 0 to read from the beginning
                 // stream reader to read from memory stream
                 // SFTP servers often use ISO-8859-1 encoding, which is due to the Linux system.
@@ -75,13 +78,14 @@ namespace Coeo.FileSystem.Repositories.Files
                 return contentString;
             });
         }
-        public async Task DeleteFileAsync(string remoteFilePath)
+        public async Task DeleteFileAsync(string remoteFilePath, CancellationToken? cancellationToken)
         {
             await ExecuteWithHandling(async () =>
             {
                 _pathHelper.CheckPathString(remoteFilePath);
-                await _fileHelper.CheckFileAsync(remoteFilePath);
-                await _client.DeleteAsync(remoteFilePath);
+                var token = cancellationToken ?? CancellationToken.None;
+                await _fileHelper.CheckFileAsync(remoteFilePath, token);
+                await _client.DeleteAsync(remoteFilePath, token);
                 return Task.CompletedTask;
             });
         }

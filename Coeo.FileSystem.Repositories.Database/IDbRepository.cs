@@ -1,15 +1,16 @@
-﻿namespace Coeo.FileSystem.Repositories.Database
+﻿
+namespace Coeo.FileSystem.Repositories.Database
 {
     public interface IDbRepository<TEntity>
     {
-        Task AddAsync(TEntity entity);
-        Task AddRangeAsync(IEnumerable<TEntity> entities);
-        Task DeleteAsync(int id);
-        Task DeleteRangeAsync(IEnumerable<TEntity> entities);
-        IQueryable<TEntity> GetAll();
-        Task<TEntity?> GetByIdAsync(int id);
-        IQueryable<TEntity> ReadAll();
-        Task UpdateAsync(TEntity entity);
-        Task UpdateRangeAsync(IEnumerable<TEntity> entities);
+        Task AddAsync(TEntity entity, CancellationToken? cancellationToken);
+        Task AddRangeAsync(IEnumerable<TEntity> entities, CancellationToken? cancellationToken);
+        Task DeleteAsync(int id, CancellationToken? cancellationToken);
+        Task DeleteRangeAsync(IEnumerable<TEntity> entities, CancellationToken? cancellationToken);
+        IQueryable<TEntity> GetAllQuery();
+        Task<TEntity?> GetByIdAsync(int id, CancellationToken? cancellationToken);
+        IQueryable<TEntity> ReadAllQuery();
+        Task UpdateAsync(TEntity entity, CancellationToken? cancellationToken);
+        Task UpdateRangeAsync(IEnumerable<TEntity> entities, CancellationToken? cancellationToken);
     }
 }

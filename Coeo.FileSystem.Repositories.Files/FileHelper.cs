@@ -4,7 +4,7 @@ namespace Coeo.FileSystem.Repositories.Files
 {
     public class FileHelper : FileRepositoryBase, IFileHelper
     {
-        public async Task CheckFileAsync(string filePath)
+        public async Task CheckFileAsync(string filePath, CancellationToken? cancellationToken)
         {
             // This method does not require a bool return value, as its purpose is to validate the existence of the file with exception hanndling
             await ExecuteWithHandling(() =>

@@ -7,7 +7,7 @@
         {
             _pathHelper = pathHelper;
         }
-        public async Task CheckDirectoryAsync(string directory)
+        public async Task CheckDirectoryAsync(string directory, CancellationToken? cancellationToken)
         {
             await ExecuteWithHandling(() =>
             {
@@ -17,7 +17,7 @@
                 return Task.CompletedTask;
             });
         }
-        public async Task CreateDirectoryAsync(string directory)
+        public async Task CreateDirectoryAsync(string directory, CancellationToken? cancellationToken)
         {
             await ExecuteWithHandling(() =>
             {
