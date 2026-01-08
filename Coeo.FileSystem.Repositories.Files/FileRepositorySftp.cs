@@ -42,10 +42,6 @@ namespace Coeo.FileSystem.Repositories.Files
             {
                 throw new InvalidOperationException(SFTP_CONNECTION_ERROR, ex);
             }
-
-
-            if (!_client.IsConnected)
-                throw new InvalidOperationException(SFTP_CONNECTION_ERROR);
         }
         public async Task<IEnumerable<string>> ListAllFilesAsync(string remoteDirectory, CancellationToken? cancellationToken = null)
         {
