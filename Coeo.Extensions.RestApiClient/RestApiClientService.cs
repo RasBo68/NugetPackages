@@ -73,13 +73,13 @@ namespace Coeo.Extensions.RestApiClient
                     switch (requestType)
                     {
                         case RequestType.post:
-                            apiResponse = await client.PostAsync(apiUrl, apiBody, cancellationToken ?? new CancellationTokenSource().Token);
+                            apiResponse = await client.PostAsync(apiUrl, apiBody, cancellationToken ?? CancellationToken.None);
                             break;
                         case RequestType.put:
-                            apiResponse = await client.PutAsync(apiUrl, apiBody, cancellationToken ?? new CancellationTokenSource().Token);
+                            apiResponse = await client.PutAsync(apiUrl, apiBody, cancellationToken ?? CancellationToken.None);
                             break;
                         case RequestType.get:
-                            apiResponse = await client.GetAsync(apiUrl, cancellationToken ?? new CancellationTokenSource().Token);
+                            apiResponse = await client.GetAsync(apiUrl, cancellationToken ?? CancellationToken.None);
                             break;
                         case RequestType.delete:
                             break;
