@@ -34,15 +34,15 @@ namespace Coeo.FileSystem.Repositories.Files
             });
 
         }
-        public async Task UploadFileAsync(string contentString, string filePath, CancellationToken? cancellationToken = null)
+        public async Task UploadFileAsync(FileObject fileObject, CancellationToken? cancellationToken = null)
         {
             await ExecuteWithHandling(async () =>
             {
                 cancellationToken?.ThrowIfCancellationRequested();
 
-                _pathHelper.CheckPathString(filePath);
+                _pathHelper.CheckPathString(fileObject.Path);
                 // In the windows file system, the default encoding is UTF-16 LE (Little Endian).
-                await File.WriteAllTextAsync(filePath, contentString, cancellationToken ?? CancellationToken.None);
+                await File.WriteAllTextAsync(fileObject.Path, fileObject.Content, cancellationToken ?? CancellationToken.None);
             });
         }
         public async Task<FileObject> DownloadFileAsync(string filePath, CancellationToken? cancellationToken = null)

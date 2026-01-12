@@ -66,16 +66,16 @@ namespace Coeo.FileSystem.Repositories.Files
                 });
             });
         }
-        public async Task UploadFileAsync(string contentString, string remoteFilePath, CancellationToken? cancellationToken = null)
+        public async Task UploadFileAsync(FileObject remoteFileObject, CancellationToken? cancellationToken = null)
         {
             await ExecuteWithHandling(async () =>
             {
-                _pathHelper.CheckPathString(remoteFilePath);
+                _pathHelper.CheckPathString(remoteFileObject.Path);
                 // convert string to byte array
                 // SFTP servers often use ISO-8859-1 encoding, which is due to the Linux system.
-                var contentBytes = Encoding.GetEncoding("ISO-8859-1").GetBytes(contentString); 
+                var contentBytes = Encoding.GetEncoding("ISO-8859-1").GetBytes(remoteFileObject.Content); 
                 using var ms = new MemoryStream(contentBytes);  // create memory stream in ram memory from byte array
-                await _client.UploadFileAsync(ms, remoteFilePath, cancellationToken ?? CancellationToken.None);
+                await _client.UploadFileAsync(ms, remoteFileObject.Path, cancellationToken ?? CancellationToken.None);
                 return Task.CompletedTask;
             });
         }

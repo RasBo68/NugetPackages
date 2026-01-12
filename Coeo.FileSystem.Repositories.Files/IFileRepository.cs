@@ -9,6 +9,6 @@ namespace Coeo.FileSystem.Repositories.Files
         void Dispose();
         Task<FileObject> DownloadFileAsync(string filePath, CancellationToken? cancellationToken = null);
         Task<IEnumerable<string>> ListAllFilesAsync(string directory, CancellationToken? cancellationToken = null);
-        Task UploadFileAsync(string contentString, string filePath, CancellationToken? cancellationToken = null);
+        Task UploadFileAsync(FileObject fileObject, CancellationToken? cancellationToken = null);
     }
 }
