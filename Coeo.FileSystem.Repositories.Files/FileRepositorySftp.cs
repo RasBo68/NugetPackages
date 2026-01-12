@@ -1,4 +1,5 @@
 ﻿
+using Coeo.FileSystem.Repositories.Files.Models;
 using Renci.SshNet;
 using System.Text;
 
@@ -78,7 +79,7 @@ namespace Coeo.FileSystem.Repositories.Files
                 return Task.CompletedTask;
             });
         }
-        public async Task<string> DownloadFileAsync(string remoteFilePath, CancellationToken? cancellationToken = null)
+        public async Task<FileContent> DownloadFileAsync(string remoteFilePath, CancellationToken? cancellationToken = null)
         {
             return await ExecuteWithHandling(async () =>
             {
@@ -93,7 +94,7 @@ namespace Coeo.FileSystem.Repositories.Files
                 // SFTP servers often use ISO-8859-1 encoding, which is due to the Linux system.
                 using var sr = new StreamReader(ms, Encoding.GetEncoding("ISO-8859-1"));   
                 var contentString = sr.ReadToEnd();     // conversion bytes 2 string
-                return contentString;
+                return new FileContent {Path = remoteFilePath,  Content = contentString };
             });
         }
         public async Task DeleteFileAsync(string remoteFilePath, CancellationToken? cancellationToken = null)

@@ -1,4 +1,5 @@
 ﻿
+using Coeo.FileSystem.Repositories.Files.Models;
 using System.Text;
 
 namespace Coeo.FileSystem.Repositories.Files
@@ -41,10 +42,10 @@ namespace Coeo.FileSystem.Repositories.Files
 
                 _pathHelper.CheckPathString(filePath);
                 // In the windows file system, the default encoding is UTF-16 LE (Little Endian).
-                await File.WriteAllTextAsync(filePath, contentString);
+                await File.WriteAllTextAsync(filePath, contentString, cancellationToken ?? CancellationToken.None);
             });
         }
-        public async Task<string> DownloadFileAsync(string filePath, CancellationToken? cancellationToken = null)
+        public async Task<FileContent> DownloadFileAsync(string filePath, CancellationToken? cancellationToken = null)
         {
             return await ExecuteWithHandling(async () =>
             {
@@ -53,7 +54,8 @@ namespace Coeo.FileSystem.Repositories.Files
                 _pathHelper.CheckPathString(filePath);
                 await _fileHelper.CheckFileAsync(filePath, cancellationToken);
                 // In the windows file system, the default encoding is UTF-16 LE (Little Endian).
-                return await File.ReadAllTextAsync(filePath);
+                var contentString = await File.ReadAllTextAsync(filePath, cancellationToken ?? CancellationToken.None);
+                return new FileContent { Path = filePath, Content = contentString } ;
             });
         }
         public async Task DeleteFileAsync(string filePath, CancellationToken? cancellationToken = null)
