@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	  <PackageId>Coeo.FileSystem.Repositories.Database</PackageId>
-	  <Version>1.0.10</Version>
+	  <Version>1.0.14</Version>
 	  <Authors>Rasit Boztoprak</Authors>
 	  <Description>Abstraction layer for database operations</Description>
 	  <PackageTags>filesystem, database, nuget</PackageTags>
