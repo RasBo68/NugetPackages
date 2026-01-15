@@ -1,4 +1,6 @@
 ﻿
+using System.Text;
+
 namespace Coeo.Converters.Xml
 {
     public interface IXmlConverter

@@ -34,7 +34,7 @@ namespace Coeo.FileSystem.Repositories.Files
             });
 
         }
-        public async Task UploadFileAsync(FileObject fileObject, CancellationToken? cancellationToken = null)
+        public async Task UploadFileAsync(FileObject fileObject, Encoding encoding, CancellationToken? cancellationToken = null)
         {
             await ExecuteWithHandling(async () =>
             {
@@ -42,10 +42,10 @@ namespace Coeo.FileSystem.Repositories.Files
 
                 _pathHelper.CheckPathString(fileObject.Path);
                 // In the windows file system, the default encoding is UTF-16 LE (Little Endian).
-                await File.WriteAllTextAsync(fileObject.Path, fileObject.Content, cancellationToken ?? CancellationToken.None);
+                await File.WriteAllTextAsync(fileObject.Path, fileObject.Content, encoding, cancellationToken ?? CancellationToken.None);
             });
         }
-        public async Task<FileObject> DownloadFileAsync(string filePath, CancellationToken? cancellationToken = null)
+        public async Task<FileObject> DownloadFileAsync(string filePath, Encoding encoding, CancellationToken? cancellationToken = null)
         {
             return await ExecuteWithHandling(async () =>
             {
@@ -54,7 +54,7 @@ namespace Coeo.FileSystem.Repositories.Files
                 _pathHelper.CheckPathString(filePath);
                 await _fileHelper.CheckFileAsync(filePath, cancellationToken);
                 // In the windows file system, the default encoding is UTF-16 LE (Little Endian).
-                var contentString = await File.ReadAllTextAsync(filePath, cancellationToken ?? CancellationToken.None);
+                var contentString = await File.ReadAllTextAsync(filePath, encoding, cancellationToken ?? CancellationToken.None); 
                 return new FileObject { Path = filePath, Content = contentString } ;
             });
         }

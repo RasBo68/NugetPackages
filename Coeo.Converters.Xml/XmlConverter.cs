@@ -16,7 +16,7 @@ namespace Coeo.Converters.Xml
         private const string XMLNS_XSI_VALUE = "http://www.w3.org/2001/XMLSchema-instance";
         private const string DESERIALIZATION_EXCEPTION = "Deserialization of the xmlContentString \n {0} \n failed.";
         private const string SERIALIZATION_EXCEPTION = "serialization of the object \n {0} \n failed.";
-        private const string JSON_STRING_EMPTY_OR_WHITESPACE = "Xml string is empty or just whitespace.";
+        private const string JSON_STRING_EMPTY_OR_WHITESPACE = "The input xml string content is either null or empty.";
 
         public TLoadObject ConvertXmlStringToObject<TLoadObject>(string xmlContentString)
         {

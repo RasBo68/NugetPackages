@@ -66,20 +66,19 @@ namespace Coeo.FileSystem.Repositories.Files
                 });
             });
         }
-        public async Task UploadFileAsync(FileObject remoteFileObject, CancellationToken? cancellationToken = null)
+        public async Task UploadFileAsync(FileObject remoteFileObject, Encoding encoding, CancellationToken? cancellationToken = null)
         {
             await ExecuteWithHandling(async () =>
             {
                 _pathHelper.CheckPathString(remoteFileObject.Path);
                 // convert string to byte array
-                // SFTP servers often use ISO-8859-1 encoding, which is due to the Linux system.
-                var contentBytes = Encoding.GetEncoding("ISO-8859-1").GetBytes(remoteFileObject.Content); 
+                var contentBytes = encoding.GetBytes(remoteFileObject.Content); 
                 using var ms = new MemoryStream(contentBytes);  // create memory stream in ram memory from byte array
                 await _client.UploadFileAsync(ms, remoteFileObject.Path, cancellationToken ?? CancellationToken.None);
                 return Task.CompletedTask;
             });
         }
-        public async Task<FileObject> DownloadFileAsync(string remoteFilePath, CancellationToken? cancellationToken = null)
+        public async Task<FileObject> DownloadFileAsync(string remoteFilePath, Encoding encoding, CancellationToken? cancellationToken = null)
         {
             return await ExecuteWithHandling(async () =>
             {
@@ -92,7 +91,7 @@ namespace Coeo.FileSystem.Repositories.Files
                 ms.Position = 0;    // after download the cursor of memory stream is at the end, set position to 0 to read from the beginning
                 // stream reader to read from memory stream
                 // SFTP servers often use ISO-8859-1 encoding, which is due to the Linux system.
-                using var sr = new StreamReader(ms, Encoding.GetEncoding("ISO-8859-1"));   
+                using var sr = new StreamReader(ms, encoding);   
                 var contentString = sr.ReadToEnd();     // conversion bytes 2 string
                 return new FileObject {Path = remoteFilePath,  Content = contentString };
             });
