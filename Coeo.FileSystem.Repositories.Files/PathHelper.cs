@@ -34,7 +34,7 @@ namespace Coeo.FileSystem.Repositories.Files
         }
         public void CheckPathString(string path)
         {
-            if (string.IsNullOrEmpty(path) || string.IsNullOrWhiteSpace(path))
+            if (string.IsNullOrWhiteSpace(path))
                 throw new InvalidOperationException(string.Format(PATH_IS_EMPTY_ERROR, nameof(path)));
         }
     }

@@ -12,7 +12,7 @@ namespace Coeo.Converters.Json
 
         public TObject ConvertJsonStringToObject<TObject>(string jsonString)
         {
-            if (string.IsNullOrEmpty(jsonString) || string.IsNullOrWhiteSpace(jsonString))
+            if (string.IsNullOrWhiteSpace(jsonString))
                 throw new ArgumentException(JSON_STRING_EMPTY_OR_WHITESPACE);
 
             try

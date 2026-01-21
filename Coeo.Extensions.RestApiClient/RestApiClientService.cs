@@ -37,7 +37,7 @@ namespace Coeo.Extensions.RestApiClient
         }
         private async Task<HttpResponseMessage> RequestInternal(string apiUrl, RequestType requestType, CancellationToken? cancellationToken = null, List<HttpRequestHeaderSimplified>? httpRequestHeaders = null, object? sendObject = null)
         {
-            if (string.IsNullOrEmpty(apiUrl) || string.IsNullOrWhiteSpace(apiUrl))
+            if (string.IsNullOrWhiteSpace(apiUrl))
                 throw new InvalidOperationException(API_URL_STRING_EMPTY_OR_WHITESPACE);
 
             using (var client = new HttpClient())

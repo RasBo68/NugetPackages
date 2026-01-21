@@ -20,7 +20,7 @@ namespace Coeo.Converters.Xml
 
         public TLoadObject ConvertXmlStringToObject<TLoadObject>(string xmlContentString)
         {
-            if (string.IsNullOrEmpty(xmlContentString) || string.IsNullOrWhiteSpace(xmlContentString))
+            if (string.IsNullOrWhiteSpace(xmlContentString))
                 throw new ArgumentException(JSON_STRING_EMPTY_OR_WHITESPACE);
 
             try

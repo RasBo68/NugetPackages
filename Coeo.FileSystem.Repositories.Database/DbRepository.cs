@@ -11,7 +11,6 @@ namespace Coeo.FileSystem.Repositories.Database
         protected readonly DbContext _context;
         protected readonly DbSet<TEntity> _dbSet;
 
-        private const string DATABASE_ERROR_MESSAGE = "Database operation failed!";
         private const string ARGUMENT_OUT_OF_RANGE_EXCEPTION = "An attempt was made to {0} the entity with id {1}.";
         private const string READ = "read";
         private const string DELETE = "delete";
@@ -27,6 +26,13 @@ namespace Coeo.FileSystem.Repositories.Database
         // AND once methods like ToList() or ToListAsync() (or similar) are executed, the entire previously constructed query tree
         // is compiled and sent to the data source (e.g., the database) as a single query, loading the final result into memory.
         // This provides an efficiency improvement over IEnumerable, which would immediately load all database elements into local memory.
+        //
+        // 3) Update best practise always: Load → Modify → Save
+        //    Load with GetAllQuery() or GetByIdAsync(...), modify the entity in memory, then save changes with SaveAsync(...)
+        //    _dbset.Update(entity) is not necessary, because the DbContext is already tracking the entity.
+        //    Disadvantages of using _dbset.Update(entity):
+        //    - all properties were marked as modified, even if only a few were changed -> Lead to concurrency problems
+        //    - performance overhead, especially with large entities or frequent updates.
         // ############################################# Important Note: Why No Lock? #############################################
 
         public DbRepository(DbContext context)
@@ -79,26 +85,6 @@ namespace Coeo.FileSystem.Repositories.Database
                 return new object();
             }, entities);
         }
-        public virtual async Task UpdateAsync(TEntity entity, CancellationToken? cancellationToken = null)
-        {
-            await ExecuteWithHandlingAsync(async () =>
-            {
-                _dbSet.Update(entity);
-                await _context.SaveChangesAsync(cancellationToken ?? CancellationToken.None);
-                return new object();
-            }, entity);
-        }
-        public virtual async Task UpdateRangeAsync(IEnumerable<TEntity> entities, CancellationToken? cancellationToken = null)
-        {
-            if (!entities.Any()) return;
-
-            await ExecuteWithHandlingAsync(async () =>
-            {
-                _dbSet.UpdateRange(entities);
-                await _context.SaveChangesAsync(cancellationToken ?? CancellationToken.None);
-                return new object();
-            }, entities);
-        }
         public async Task DeleteAsync(int id, CancellationToken? cancellationToken = null)
         {
             if (id < 1)
@@ -126,6 +112,15 @@ namespace Coeo.FileSystem.Repositories.Database
                 return new object();
             }, entities);
         }
+        public async Task SaveAsync(CancellationToken? cancellationToken = null)
+        {
+            await ExecuteWithHandlingAsync(async () =>
+            {
+                await _context.SaveChangesAsync(cancellationToken ?? CancellationToken.None);
+                return new object();
+            });
+        }
+
 
         private async Task<TOut> ExecuteWithHandlingAsync<TOut>(Func<Task<TOut>> action, object? entity = default)
         {
@@ -140,17 +135,11 @@ namespace Coeo.FileSystem.Repositories.Database
             // Concurrency exception handling: e.g., when a row is being used by another process, by exception while using addrange whole operation fails
             catch (DbUpdateConcurrencyException ex)
             {
-                if (entity == null)
-                    throw new DatabaseRowIsInUsageException(DATABASE_ERROR_MESSAGE, ex);
-                else
-                    throw new DatabaseRowIsInUsageException(DATABASE_ERROR_MESSAGE, ex, entity);
+                throw new DatabaseRowIsInUsageException(ex.Message, ex);
             }
-            catch (Exception ex) // by exception while using addrange whole operation fails
+            catch (Exception ex)
             {
-                if (entity == null)
-                    throw new DatabaseException(DATABASE_ERROR_MESSAGE, ex);
-                else
-                    throw new DatabaseException(DATABASE_ERROR_MESSAGE, ex, entity);
+                throw new DatabaseException(ex.Message, ex);
             }
         }
         private TOut ExecuteWithHandling<TOut>(Func<TOut> action, object? entity = default)
@@ -165,17 +154,11 @@ namespace Coeo.FileSystem.Repositories.Database
             }
             catch (DbUpdateConcurrencyException ex)
             {
-                if (entity == null)
-                    throw new DatabaseRowIsInUsageException(DATABASE_ERROR_MESSAGE, ex);
-                else
-                    throw new DatabaseRowIsInUsageException(DATABASE_ERROR_MESSAGE, ex, entity);
+                throw new DatabaseRowIsInUsageException(ex.Message, ex);
             }
             catch (Exception ex)
             {
-                if (entity == null)
-                    throw new DatabaseException(DATABASE_ERROR_MESSAGE, ex);
-                else
-                    throw new DatabaseException(DATABASE_ERROR_MESSAGE, ex, entity);
+                throw new DatabaseException(ex.Message, ex);
             }
         }
 

@@ -2,23 +2,9 @@
 {
     public class DatabaseException : Exception
     {
-        public object? AdditionalInformation { get; set; }
-
-        public DatabaseException() : base()
-        {
-        }
-        public DatabaseException(string message)
-            : base(message)
-        {
-        }
         public DatabaseException(string message, Exception innerException)
             : base(message, innerException)
         {
-        }
-        public DatabaseException(string message, Exception innerException, object additionalInformation)
-            : base(message, innerException)
-        {
-            AdditionalInformation = additionalInformation;
         }
     }
 }

@@ -10,7 +10,6 @@ namespace Coeo.FileSystem.Repositories.Database
         IQueryable<TEntity> GetAllQuery();
         Task<TEntity?> GetByIdAsync(int id, CancellationToken? cancellationToken = null);
         IQueryable<TEntity> ReadAllQuery();
-        Task UpdateAsync(TEntity entity, CancellationToken? cancellationToken = null);
-        Task UpdateRangeAsync(IEnumerable<TEntity> entities, CancellationToken? cancellationToken = null);
+        Task SaveAsync(CancellationToken? cancellationToken = null);
     }
 }
